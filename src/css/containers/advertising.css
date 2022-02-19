@@ -1,0 +1,92 @@
+.Advertising_heading {
+  display: flex !important;
+  justify-content: center !important;
+  font-weight: 600 !important;
+  font-size: 96px !important;
+  line-height: 115px !important;
+  text-transform: uppercase !important;
+  padding-left: 17% !important;
+  padding-top: 11% !important;
+}
+.upper_left_div {
+  display: flex !important;
+  flex-direction: column !important;
+  /* justify-content: center !important; */
+  align-items: center !important;
+  padding-top: 3% !important;
+}
+.Advertising_para {
+  align-items: center !important;
+  font-style: normal !important;
+  font-weight: 600 !important;
+  font-size: 36px !important;
+  line-height: 43px !important;
+  /* width: 80% !important; */
+  padding-top: 20% !important;
+  padding-right: 30% !important;
+  word-break: break-all !important;
+}
+.upper_right_div {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: flex-end !important;
+  padding-bottom: 12% !important;
+}
+.Advertising-heading {
+  font-weight: 600 !important;
+  font-size: 80px !important;
+  line-height: 115px !important;
+  text-transform: uppercase !important;
+  border-left: 10px solid #3399fe !important;
+  border-radius: 4px !important;
+  padding-left: 4% !important;
+  /* padding-left: 17% !important; */
+}
+.emptdiv {
+  width: 2px !important;
+  height: 100px !important;
+  color: red !important;
+}
+.Contactusbutton {
+  padding: 10px !important;
+  width: 170px !important;
+  text-transform: capitalize !important;
+  font-family: Urbanist !important;
+  font-style: normal !important;
+  font-weight: 500 !important;
+  font-size: 20px !important;
+  /* line-height: 43px !important; */
+
+  color: #ffffff !important;
+  background: #3399fe !important;
+  border-radius: 10px !important;
+}
+.backimg {
+  /* display: flex !important; */
+  /* justify-content: center; */
+  /* align-items: center !important;
+  height: 100vh !important;
+  width: 100% !important; */
+  /* transform: scale(0.5) !important; */
+  /* background-position: center !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important; */
+
+  background-image: url("../../assets/images/AdvestisingSvg.svg");
+  display: flex !important;
+  align-items: center !important;
+  height: 1500px !important;
+  /* width: 1px !important; */
+  width: 100vw !important;
+  background-position: center !important;
+  background-size: contain !important;
+  background-repeat: no-repeat !important;
+}
+.bottom_left_div {
+  display: flex !important;
+  flex-direction: column !important;
+  /* justify-content: center !important; */
+  align-items: center !important;
+  padding-bottom: 35% !important;
+  padding-left: 9% !important;
+}

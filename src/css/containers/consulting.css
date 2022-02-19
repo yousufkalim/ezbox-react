@@ -1,0 +1,58 @@
+.Consultingtypo {
+  font-style: normal !important;
+  font-weight: 600 !important;
+  font-size: 32px !important;
+  line-height: 38px !important;
+  /* padding-right: 19% !important; */
+}
+.Consultingtypogrid {
+  padding-top: 8% !important;
+  /* align-items: center !important;
+  padding-bottom: 25% !important; */
+  padding-right: 10% !important;
+}
+.Consultingimgdiv {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding-top: 24% !important;
+  padding-left: 30%;
+}
+.buttondiv {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  justify-content: center !important;
+  align-items: flex-end !important;
+  /* padding-top: 40% !important; */
+
+  width: 53%;
+  /* background-color: red; */
+  float: right;
+  height: 78vh;
+}
+.buttontypo {
+  font-weight: 600 !important;
+  font-size: 24px !important;
+  line-height: 29px !important;
+  /* identical to box height */
+  margin-bottom: 8% !important;
+  margin-top: 8% !important;
+  text-align: right !important;
+  background: linear-gradient(
+    180deg,
+    #3399fe 27.08%,
+    rgba(51, 153, 254, 0.14) 100%
+  ) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+.bb {
+  border-right: 10px solid #3399fe !important;
+  border-radius: 5px !important;
+  padding-right: 3%;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-end !important;
+  justify-content: center !important;
+}

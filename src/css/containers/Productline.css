@@ -1,0 +1,25 @@
+.ProductHeading {
+  font-style: normal !important;
+  font-weight: 600 !important;
+  font-size: 36px !important;
+  line-height: 43px !important;
+
+  /* Blue - EZBox */
+
+  color: #3399fe !important;
+}
+.ProductDescription {
+  font-style: normal !important;
+  font-weight: 600 !important;
+  font-size: 24px !important;
+  line-height: 29px !important;
+
+  /* Black - EZBox */
+
+  color: #454238;
+}
+/* .bgimg {
+  display: flex !important;
+  flex-direction: column !important;
+  background-image: url("../../assets//images/Vector.svg");
+} */
