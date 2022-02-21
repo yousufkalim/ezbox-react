@@ -13,7 +13,7 @@ const Footer = () => {
           xs={12}
           sm={12}
           md={4}
-          className="footer_div"
+          // className="footer_div"
           sx={{ paddingTop: "3% !important" }}
         >
           <div style={{ display: "flex", justifyContent: "center" }}>
@@ -53,7 +53,10 @@ const Footer = () => {
           <Typography className="footer_list">Contact</Typography>
         </Grid>
         <Grid item xs={12} sm={12} md={4}>
-          <div style={{ position: "absolute", left: "62%" }}>
+          <div
+            style={{ position: "absolute", left: "62%" }}
+            className="followus"
+          >
             <img src={Followus}></img>
           </div>
           <div style={{ paddingLeft: "20%" }}>

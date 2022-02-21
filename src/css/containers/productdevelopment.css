@@ -2,7 +2,7 @@
   display: flex !important;
   justify-content: center !important;
   align-items: center !important;
-  padding-top: 8% !important;
+  padding-top: 13% !important;
 }
 .productTypography {
   font-style: normal !important;
@@ -18,5 +18,5 @@
   display: flex !important;
   justify-content: center !important;
   align-items: center !important;
-  height: 100vh !important;
+  height: 80vh !important;
 }
