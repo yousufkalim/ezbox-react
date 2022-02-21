@@ -1,0 +1,91 @@
+.main-list {
+  background: linear-gradient(
+    180deg,
+    #ffffff 27.08%,
+    rgba(255, 255, 255, 0.15) 100%
+  );
+  padding: 30px;
+}
+.flex_rowAlign_center {
+  display: flex;
+  /* justify-content: space-between; */
+  align-items: center;
+}
+
+li ul {
+  display: flex !important;
+  list-style: none;
+}
+li {
+  list-style: none;
+  /* text-align: left; */
+  width: 230%;
+}
+li a {
+  text-decoration: none;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 20px;
+}
+ul li a:hover {
+  background: linear-gradient(
+    180deg,
+    #3399fe 27.08%,
+    rgba(51, 153, 254, 0.14) 100%
+  );
+}
+.home-logo {
+  padding-left: 25%;
+}
+.Home_typo {
+  display: flex;
+  justify-content: center;
+  font-style: normal;
+  font-weight: 600 !important;
+  font-size: 30px !important;
+  line-height: 43px;
+  width: 60%;
+  text-align: left;
+  /* padding-top: 15%; */
+
+  /* padding-right: 20%; */
+}
+.Home_img {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  padding-top: 13% !important;
+}
+.frame {
+  background: radial-gradient(
+    50% 50% at 50% 50%,
+    #f7a119 0%,
+    rgba(247, 161, 25, 0) 100%
+  ) !important;
+}
+.Down_Arrow {
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+}
+.Typo_Grid {
+  /* align-items: center; */
+  padding-top: 8% !important;
+}
+.css-ahj2mt-MuiTypography-root {
+  font-family: Urbanist !important;
+  letter-spacing: normal;
+}
+
+@media only screen and (max-width: 768px) {
+  .list {
+    display: none;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .Home_typo {
+    display: flex !important;
+    justify-content: center !important;
+    font-size: 12px !important;
+  }
+}
