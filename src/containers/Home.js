@@ -34,7 +34,7 @@ export default function Home() {
           </Typography>
         </Grid>
         <Grid item xs={12} sm={12} md={7} className="Home_img">
-          <div>
+          <div className="Home_img">
             <img src={Frame} className="frame"></img>
           </div>
         </Grid>
@@ -51,6 +51,7 @@ export default function Home() {
           sm={12}
           md={6}
           sx={{ display: "flex", justifyContent: "center" }}
+          className="ytplayer"
         >
           <img src={Player} style={{ width: "80%" }}></img>
         </Grid>
@@ -60,16 +61,21 @@ export default function Home() {
           md={6}
           xs={{ display: "flex", alignItems: "center" }}
         >
-          <div>
+          <div className="ezboxx">
             <img src={Ezboximg} style={{ paddingTop: "31%" }}></img>
             <img src={QuestionMark}></img>
           </div>
-          <div style={{ display: "flex", justifyContent: "right" }}>
-            <img src={Ez}></img>
+          <div
+            style={{ display: "flex", justifyContent: "right" }}
+            className="ezbox_logo"
+          >
+            <img src={Ez} className="ezbox_img"></img>
           </div>
         </Grid>
       </Grid>
-      <Footer></Footer>
+      <div style={{ paddingTop: "15%" }}>
+        <Footer></Footer>
+      </div>
     </>
   );
 }
