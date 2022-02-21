@@ -2,40 +2,39 @@ import React from "react";
 import EzbozLogo from "../assets/images/Ezboxlogo.svg";
 const AppBar = () => {
   return (
-    <div className="main-list">
-      <div className="flex_rowAlign_center">
-        <a href="" style={{ width: "32%" }}>
-          <img className="home-logo" src={EzbozLogo} alt="" />
-        </a>
-        <ul className="list">
-          <li>
-            <ul>
-              <li>
-                <a href=""> Advertising </a>
-              </li>
-              <li>
-                <a href=""> Product</a>
-              </li>
-              <li>
-                <a href=""> Consulting </a>
-              </li>
-              <li>
-                <a href=""> Product Line </a>
-              </li>
-              <li>
-                <a href=""> Contact </a>
-              </li>
-              <li>
-                <a href=""> Blog </a>
-              </li>
-              <li>
-                <a href=""> Forum </a>
-              </li>
-            </ul>
-          </li>
-        </ul>
-      </div>
-    </div>
+    <>
+      <nav id="navbar" class="">
+        <div className="nav-wrapper">
+          <div className="" style={{ paddingTop: "16px" }}>
+            <img className="logo" src={EzbozLogo} alt="" />
+          </div>
+          <ul id="menu">
+            <li>
+              <a href="/Advertising">Advertising</a>
+            </li>
+            <li>
+              <a href="/ProductDevelopment">Product Development</a>
+            </li>
+            <li>
+              <a href="/Consulting">Consulting</a>
+            </li>
+            <li>
+              <a href="/ProductLine">Product Line</a>
+            </li>
+            <li>
+              <a href="/Contact">Contact</a>
+            </li>
+
+            <li>
+              <a href="#contact">Blog</a>
+            </li>
+            <li>
+              <a href="#contact">Forum</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </>
   );
 };
 

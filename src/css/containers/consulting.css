@@ -7,8 +7,9 @@
 }
 .Consultingtypogrid {
   padding-top: 8% !important;
-  /* align-items: center !important;
-  padding-bottom: 25% !important; */
+  /* align-items: center !important; */
+  /* padding-bottom: 25% !important; */
+  padding-top: 15% !important;
   padding-right: 10% !important;
 }
 .Consultingimgdiv {
@@ -24,12 +25,12 @@
   justify-content: center !important;
   justify-content: center !important;
   align-items: flex-end !important;
-  /* padding-top: 40% !important; */
+  padding-top: 40% !important;
 
   width: 53%;
   /* background-color: red; */
   float: right;
-  height: 78vh;
+  /* height: 78vh; */
 }
 .buttontypo {
   font-weight: 600 !important;

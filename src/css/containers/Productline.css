@@ -23,3 +23,12 @@
   flex-direction: column !important;
   background-image: url("../../assets//images/Vector.svg");
 } */
+.productlinesvg {
+  position: absolute;
+  top: 140%;
+  width: 100vw !important;
+}
+.bottomgrid {
+  display: flex;
+  padding-bottom: 25%;
+}

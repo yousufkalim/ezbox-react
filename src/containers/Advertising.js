@@ -28,8 +28,8 @@ export const Advertising = () => {
         </Grid>
       </Grid>
       <Grid container spacing={2}>
-        <Grid item xs={12} sm={12} md={3}>
-          <img src={Advertising1}></img>
+        <Grid item xs={12} sm={12} md={3} className="advertisingdiv">
+          <img src={Advertising1} className="advertisingimg"></img>
         </Grid>
         <Grid
           item
@@ -37,11 +37,12 @@ export const Advertising = () => {
           sm={12}
           md={6}
           sx={{ display: "flex", justifyContent: "center" }}
+          className="advertisingdiv"
         >
-          <img src={Advertising2}></img>
+          <img src={Advertising2} className="advertisingimg"></img>
         </Grid>
-        <Grid item xs={12} sm={12} md={3}>
-          <img src={Advertising3}></img>
+        <Grid item xs={12} sm={12} md={3} className="advertisingdiv">
+          <img src={Advertising3} className="advertisingimg"></img>
         </Grid>
       </Grid>
       <Grid container spacing={1} className="backimg">

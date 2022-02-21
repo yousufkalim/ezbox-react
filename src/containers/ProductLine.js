@@ -7,12 +7,12 @@ import Button from "@mui/material/Button";
 import ProductLine1 from "../assets/images/Productline1.svg";
 import ProductLine2 from "../assets/images/Productline2.svg";
 import ProductLine3 from "../assets/images/Productline3.svg";
-
+import Productsvg from "../assets/images/Productsvg.svg";
 export const ProductLine = () => {
   return (
     <>
       <AppBar></AppBar>
-      <Grid container spacing={1}>
+      <Grid container spacing={1} sx={{ paddingTop: "7%" }}>
         <Grid xs={12} sm={12} md={6} sx={{ padding: "10%" }}>
           <Typography className="ProductHeading">Coming Soon</Typography>
           <Typography className="ProductDescription">
@@ -43,26 +43,30 @@ export const ProductLine = () => {
           md={6}
           sx={{ display: "flex", alignItems: "flex-end", paddingTop: "5%" }}
         >
-          <img src={ProductLine2} style={{ width: "90%" }}></img>
+          <img src={ProductLine2} style={{ width: "90%", zIndex: "1" }}></img>
         </Grid>
-
-        <Grid xs={12} sm={12} md={6} sx={{ padding: "10%" }}>
-          <Typography className="ProductHeading">Released</Typography>
-          <Typography className="ProductDescription">
-            Guestreport analyzes visitor responses to advertising, which helps
-            build better ads. Better still it allows you to direct ads to
-            individuals depending on what was learnt about them during the
-            visit.
-          </Typography>
-        </Grid>
-        <Grid
-          xs={12}
-          sm={12}
-          md={6}
-          sx={{ display: "flex", alignItems: "flex-end", paddingTop: "5%" }}
-        >
-          <img src={ProductLine3} style={{ width: "90%" }}></img>
-        </Grid>
+        <div className="bottomgrid">
+          <Grid xs={12} sm={12} md={6} sx={{ padding: "10%" }}>
+            <Typography className="ProductHeading">Released</Typography>
+            <Typography className="ProductDescription">
+              Guestreport analyzes visitor responses to advertising, which helps
+              build better ads. Better still it allows you to direct ads to
+              individuals depending on what was learnt about them during the
+              visit.
+            </Typography>
+          </Grid>
+          <Grid
+            xs={12}
+            sm={12}
+            md={6}
+            sx={{ display: "flex", alignItems: "flex-end", paddingTop: "5%" }}
+          >
+            <img src={ProductLine3} style={{ width: "90%", zIndex: "1" }}></img>
+          </Grid>
+        </div>
+        <div className="productlinesvg">
+          <img src={Productsvg} style={{ width: "1921px" }}></img>
+        </div>
       </Grid>
       <Footer></Footer>
     </>
