@@ -13,7 +13,7 @@ const Consulting = () => {
       <Grid container spacing={1} sx={{ paddingBottom: "10%" }}>
         <Grid xs={12} sm={12} md={6}>
           <div className="Consultingimgdiv">
-            <img src={ConsultingAmic}></img>
+            <img src={ConsultingAmic} className="consultingimg"></img>
           </div>
         </Grid>
         <Grid xs={12} sm={12} md={6} className="Consultingtypogrid">
@@ -40,7 +40,9 @@ const Consulting = () => {
           </div>
         </Grid>
       </Grid>
-      <Footer></Footer>
+      <div className="footergrid">
+        <Footer></Footer>
+      </div>
     </>
   );
 };
