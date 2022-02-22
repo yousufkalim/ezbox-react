@@ -12,7 +12,12 @@ export const ProductLine = () => {
   return (
     <>
       <AppBar></AppBar>
-      <Grid container spacing={1} sx={{ paddingTop: "7%" }}>
+      <Grid
+        container
+        spacing={1}
+        sx={{ paddingTop: "7%" }}
+        className="productlinemaingrid"
+      >
         <Grid xs={12} sm={12} md={6} sx={{ padding: "10%" }}>
           <Typography className="ProductHeading">Coming Soon</Typography>
           <Typography className="ProductDescription">
@@ -28,6 +33,7 @@ export const ProductLine = () => {
           sm={12}
           md={6}
           sx={{ display: "flex", alignItems: "flex-end", paddingTop: "5%" }}
+          className="imggrid"
         >
           <img src={ProductLine1} style={{ width: "90%" }}></img>
         </Grid>
@@ -42,11 +48,12 @@ export const ProductLine = () => {
           sm={12}
           md={6}
           sx={{ display: "flex", alignItems: "flex-end", paddingTop: "5%" }}
+          className="imggrid"
         >
           <img src={ProductLine2} style={{ width: "90%", zIndex: "1" }}></img>
         </Grid>
         <div className="bottomgrid">
-          <Grid xs={12} sm={12} md={6} sx={{ padding: "10%" }}>
+          <Grid xs={12} sm={12} md={6} sx={{ padding: "10%", zIndex: "1" }}>
             <Typography className="ProductHeading">Released</Typography>
             <Typography className="ProductDescription">
               Guestreport analyzes visitor responses to advertising, which helps
@@ -60,6 +67,7 @@ export const ProductLine = () => {
             sm={12}
             md={6}
             sx={{ display: "flex", alignItems: "flex-end", paddingTop: "5%" }}
+            className="imggrid"
           >
             <img src={ProductLine3} style={{ width: "90%", zIndex: "1" }}></img>
           </Grid>
