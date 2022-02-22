@@ -62,7 +62,11 @@ export default function Home() {
           xs={{ display: "flex", alignItems: "center" }}
         >
           <div className="ezboxx">
-            <img src={Ezboximg} style={{ paddingTop: "31%" }}></img>
+            <img
+              src={Ezboximg}
+              style={{ paddingTop: "31%" }}
+              className="homeezbox"
+            ></img>
             <img src={QuestionMark}></img>
           </div>
           <div

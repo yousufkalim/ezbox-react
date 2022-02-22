@@ -55,6 +55,7 @@ export const Advertising = () => {
               paddingTop: "6%",
               paddingRight: "68%",
             }}
+            className="advertisingbtn"
           >
             <Button variant="contained" className="Contactusbutton">
               Contact us

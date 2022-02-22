@@ -12,7 +12,7 @@ const ProductDevelopment = () => {
     <>
       <AppBar></AppBar>
       <Grid container spacing={1} className="productmaingrid">
-        <Grid sx={12} sm={12} md={6}>
+        <Grid sx={12} sm={12} md={6} className="typographygrid">
           <Typography className="productTypography">
             Every business challenge and process bottleneck can be solved, with
             the wide variety of technologies available today. Al enhances
@@ -47,7 +47,7 @@ const ProductDevelopment = () => {
           <img src={Productdevelopmen3} className="advertisingimg"></img>
         </Grid>
       </Grid>
-      <div style={{ paddingTop: "4%" }}>
+      <div style={{ paddingTop: "4%" }} className="footer_grid">
         <Footer></Footer>
       </div>
     </>

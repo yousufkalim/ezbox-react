@@ -47,23 +47,25 @@ const Contact = () => {
               display: "flex",
               justifyContent: "center",
               paddingRight: "31%",
-              marginTop: "2%",
+              marginTop: "0",
             }}
           >
             <Button
               variant="contained"
               className="Contactusbutton"
-              // sx={{ marginBottom: "8%" }}
+              // sx={{ marginBottom: "8% !important" }}
             >
               Contact us
             </Button>
           </div>
         </Grid>
-        <Grid xs={12} sm={12} md={6} sx={{ paddingTop: "15% !important" }}>
-          <img src={Contactsvg}></img>
+        <Grid xs={12} sm={12} md={6} sx={{ paddingTop: "10% !important" }}>
+          <img src={Contactsvg} className="contactsvg"></img>
         </Grid>
       </Grid>
-      <Footer></Footer>
+      <div style={{ paddingTop: "4%" }}>
+        <Footer></Footer>
+      </div>
     </>
   );
 };
