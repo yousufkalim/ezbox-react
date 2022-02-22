@@ -17,7 +17,7 @@ const Footer = () => {
           sx={{ paddingTop: "3% !important" }}
         >
           <div style={{ display: "flex", justifyContent: "center" }}>
-            <img src={Ezboximg}></img>
+            <img src={Ezboximg} className="ezimg"></img>
           </div>
           <div
             style={{
@@ -59,7 +59,7 @@ const Footer = () => {
           >
             <img src={Followus}></img>
           </div>
-          <div style={{ paddingLeft: "20%" }}>
+          <div style={{ paddingLeft: "20%" }} className="footersvg">
             <img src={Socialimg} style={{ width: "93%" }}></img>
           </div>
         </Grid>
