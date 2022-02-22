@@ -32,3 +32,13 @@
   display: flex;
   padding-bottom: 25%;
 }
+@media only screen and (max-width: 1550px) {
+  .linesvg {
+    width: 1540px !important;
+  }
+}
+@media only screen and (max-width: 1300px) {
+  .linesvg {
+    width: 1140px !important;
+  }
+}

@@ -23,8 +23,8 @@ const ProductDevelopment = () => {
         </Grid>
       </Grid>
       <Grid container spacing={2} className="productmidgird">
-        <Grid item xs={12} sm={12} md={3}>
-          <img src={Productdevelopmen1}></img>
+        <Grid item xs={12} sm={12} md={3} className="advertisingdiv">
+          <img src={Productdevelopmen1} className="advertisingimg"></img>
         </Grid>
         <Grid
           item
@@ -32,8 +32,9 @@ const ProductDevelopment = () => {
           sm={12}
           md={6}
           sx={{ display: "flex", justifyContent: "center" }}
+          className="advertisingdiv"
         >
-          <img src={Productdevelopmen2}></img>
+          <img src={Productdevelopmen2} className="advertisingimg"></img>
         </Grid>
         <Grid
           item
@@ -41,8 +42,9 @@ const ProductDevelopment = () => {
           sm={12}
           md={3}
           sx={{ paddingLeft: "36px !important" }}
+          className="advertisingdiv"
         >
-          <img src={Productdevelopmen3}></img>
+          <img src={Productdevelopmen3} className="advertisingimg"></img>
         </Grid>
       </Grid>
       <div style={{ paddingTop: "4%" }}>

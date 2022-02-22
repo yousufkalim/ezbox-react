@@ -57,3 +57,21 @@
   align-items: flex-end !important;
   justify-content: center !important;
 }
+@media only screen and (max-width: 1550px) {
+  .Consultingtypo {
+    font-style: normal !important;
+    font-weight: 600 !important;
+    font-size: 26px !important;
+    line-height: 38px !important;
+    /* padding-right: 19% !important; */
+  }
+}
+@media only screen and (max-width: 1300px) {
+  .Consultingtypo {
+    font-style: normal !important;
+    font-weight: 600 !important;
+    font-size: 20px !important;
+    line-height: 38px !important;
+    /* padding-right: 19% !important; */
+  }
+}
