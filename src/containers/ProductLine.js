@@ -65,10 +65,16 @@ export const ProductLine = () => {
           </Grid>
         </div>
         <div className="productlinesvg">
-          <img src={Productsvg} style={{ width: "1921px" }}></img>
+          <img
+            src={Productsvg}
+            style={{ width: "1920px" }}
+            className="linesvg"
+          ></img>
         </div>
       </Grid>
-      <Footer></Footer>
+      <div style={{ paddingTop: "8%" }}>
+        <Footer></Footer>
+      </div>
     </>
   );
 };

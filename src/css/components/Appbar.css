@@ -46,7 +46,7 @@
   height: 50px !important;
   letter-spacing: 1px !important;
   margin: 0 20px !important;
-  padding: 0 10px !important;
+  padding: 0 3px !important;
   position: relative !important;
   text-decoration: none !important;
   text-transform: capitalize !important;
@@ -102,7 +102,25 @@
   font-family: Urbanist !important;
   letter-spacing: normal;
 }
-
+#navbar li:active {
+  background: linear-gradient(
+    180deg,
+    #3399fe 27.08%,
+    rgba(51, 153, 254, 0.14) 100%
+  );
+}
+@media only screen and (max-width: 1550px) {
+  #navbar li a {
+    margin: 0 11px !important;
+    font-size: 16px;
+  }
+}
+@media only screen and (max-width: 1390px) {
+  #navbar li a {
+    margin: 0 6px !important;
+    font-size: 16px;
+  }
+}
 @media only screen and (max-width: 1300px) {
   #navbar ul {
     display: none !important;
