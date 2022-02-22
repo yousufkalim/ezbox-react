@@ -39,6 +39,9 @@
   .followus {
     display: none !important;
   }
+  .ezimg {
+    width: 50% !important;
+  }
   /* .footergrid {
     display: flex !important;
   } */
