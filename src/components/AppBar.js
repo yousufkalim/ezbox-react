@@ -1,12 +1,11 @@
-import React from "react";
-import EzbozLogo from "../assets/images/Ezboxlogo.svg";
-import Button from "@mui/material/Button";
+import React, { useState } from "react";
+import EzbozLogo from "../assets/images/Ezlogo.svg";
 import Menu from "@mui/material/Menu";
-import MenuItem from "@mui/material/MenuItem";
 import MenuIcon from "@mui/icons-material/Menu";
 import IconButton from "@mui/material/IconButton";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 const AppBar = () => {
+  const history = useHistory();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
@@ -16,38 +15,79 @@ const AppBar = () => {
     setAnchorEl(null);
   };
   const ITEM_HEIGHT = 48;
-
   return (
     <>
       <nav id="navbar" class="">
         <div className="nav-wrapper">
           <div className="" style={{ paddingTop: "16px" }}>
-            <Link to="/">
+            <Link to="/" activeClassName="active">
               <img className="logo" src={EzbozLogo} alt="" />
             </Link>
           </div>
           <ul id="menu">
             <li>
-              <a href="/Advertising">Advertising</a>
+              <Link
+                to="/Advertising"
+                className={`${
+                  history.location.pathname === "/Advertising"
+                    ? "background"
+                    : ""
+                }`}
+              >
+                Advertising
+              </Link>
             </li>
             <li>
-              <a href="/ProductDevelopment">Product Development</a>
+              <Link
+                to="/ProductDevelopment"
+                className={`${
+                  history.location.pathname === "/ProductDevelopment"
+                    ? "background"
+                    : ""
+                }`}
+              >
+                Product Development
+              </Link>
             </li>
             <li>
-              <a href="/Consulting">Consulting</a>
+              <Link
+                to="/Consulting"
+                className={`${
+                  history.location.pathname === "/Consulting"
+                    ? "background"
+                    : ""
+                }`}
+              >
+                Consulting
+              </Link>
             </li>
             <li>
-              <a href="/ProductLine">Product Line</a>
+              <Link
+                to="/ProductLine"
+                className={`${
+                  history.location.pathname === "/ProductLine"
+                    ? "background"
+                    : ""
+                }`}
+              >
+                Product line
+              </Link>
             </li>
             <li>
-              <a href="/Contact">Contact</a>
+              <Link
+                to="/Contact"
+                className={`${
+                  history.location.pathname === "/Contact" ? "background" : ""
+                }`}
+              >
+                Contact
+              </Link>
             </li>
-
             <li>
-              <a href="#contact">Blog</a>
+              <Link to="#">Blog</Link>
             </li>
             <li>
-              <a href="#contact">Forum</a>
+              <Link tp="#">Forum</Link>
             </li>
           </ul>
         </div>
