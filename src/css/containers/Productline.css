@@ -26,7 +26,7 @@
 .productlinesvg {
   position: absolute;
   top: 140%;
-  width: 100vw !important;
+  /* width: 100vw !important; */
 }
 .bottomgrid {
   display: flex;
@@ -34,12 +34,12 @@
 }
 @media only screen and (max-width: 1550px) {
   .linesvg {
-    width: 1540px !important;
+    /* width: 1540px !important; */
   }
 }
 @media only screen and (max-width: 1256px) {
   .linesvg {
-    width: 1260px !important;
+    /* width: 1260px !important; */
   }
 }
 @media only screen and (max-width: 900px) {
@@ -54,7 +54,7 @@
     flex-direction: column !important;
   }
   .linesvg {
-    width: 825px !important;
+    /* width: 825px !important; */
   }
   .imggrid {
     display: flex !important;
@@ -66,7 +66,7 @@
 }
 @media only screen and (max-width: 600px) {
   .productlinesvg {
-    display: none !important;
+    /* display: none !important; */
   }
   .ProductDescription {
     font-size: 16px !important;
