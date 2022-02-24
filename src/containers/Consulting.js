@@ -5,6 +5,7 @@ import Grid from "@mui/material/Grid";
 import ConsultingAmic from "../assets/images/Consulting-amico.svg";
 import { Typography } from "@mui/material";
 import Button from "@mui/material/Button";
+import { Link } from "react-router-dom";
 
 const Consulting = () => {
   return (
@@ -16,7 +17,7 @@ const Consulting = () => {
             <img src={ConsultingAmic} className="consultingimg"></img>
           </div>
         </Grid>
-        <Grid xs={12} sm={12} md={6} className="Consultingtypogrid">
+        <Grid xs={12} sm={12} md={5} className="Consultingtypogrid">
           <Typography className="Consultingtypo">
             An innovative thought in mind, a design on paper, a product which
             matches both. We have worked with leading consumer electronics
@@ -29,13 +30,15 @@ const Consulting = () => {
               <Typography className="buttontypo">
                 To Get Premium Services
               </Typography>
-              <Button
-                variant="contained"
-                className="Contactusbutton"
-                sx={{ marginBottom: "8%" }}
-              >
-                Contact us
-              </Button>
+              <Link to="/Contact" activeClassName="active">
+                <Button
+                  variant="contained"
+                  className="Contactusbutton"
+                  sx={{ marginBottom: "8%" }}
+                >
+                  Contact us
+                </Button>
+              </Link>
             </div>
           </div>
         </Grid>
