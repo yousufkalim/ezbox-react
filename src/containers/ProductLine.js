@@ -75,7 +75,7 @@ export const ProductLine = () => {
         <div className="productlinesvg">
           <img
             src={Productsvg}
-            style={{ width: "1920px" }}
+            style={{ width: "100vw" }}
             className="linesvg"
           ></img>
         </div>
