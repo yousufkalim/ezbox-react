@@ -2,12 +2,14 @@
   display: flex !important;
   justify-content: center !important;
   align-items: center !important;
-  padding-top: 13% !important;
+  padding-top: 10% !important;
 }
 .productTypography {
   font-style: normal !important;
   font-weight: 600 !important;
   font-size: 24px !important;
+  color: #454238 !important;
+
   line-height: 29px !important;
   text-align: center !important;
   /* Black - EZBox */

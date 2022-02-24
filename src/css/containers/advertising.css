@@ -3,6 +3,8 @@
   justify-content: center !important;
   font-weight: 600 !important;
   font-size: 96px !important;
+  color: #454238 !important;
+
   line-height: 115px !important;
   text-transform: uppercase !important;
   padding-left: 24% !important;
@@ -20,6 +22,8 @@
   font-style: normal !important;
   font-weight: 600 !important;
   font-size: 36px !important;
+  color: #454238 !important;
+
   line-height: 43px !important;
   /* width: 80% !important; */
   padding-top: 20% !important;
@@ -36,6 +40,8 @@
 .Advertising-heading {
   font-weight: 600 !important;
   font-size: 80px !important;
+  color: #454238 !important;
+
   line-height: 115px !important;
   text-transform: uppercase !important;
   border-left: 10px solid #3399fe !important;
@@ -78,7 +84,7 @@
   align-items: center !important;
   height: 1500px !important;
   /* width: 1px !important; */
-  width: 99vw !important;
+  width: 100vw !important;
   background-position: center !important;
   background-size: contain !important;
   background-repeat: no-repeat !important;
@@ -90,6 +96,10 @@
   align-items: center !important;
   padding-bottom: 35% !important;
   padding-left: 9% !important;
+}
+.advertisingimg {
+  overflow: hidden !important;
+  width: 98% !important;
 }
 @media only screen and (max-width: 1700px) {
   .advertisingimg {

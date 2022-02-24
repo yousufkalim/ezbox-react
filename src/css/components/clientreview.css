@@ -21,6 +21,8 @@
 .customername {
   font-weight: 600 !important;
   font-size: 24px !important;
+  color: #454238 !important;
+
   line-height: 29px !important;
   /* identical to box height */
   text-align: center !important;
@@ -28,6 +30,8 @@
 }
 .customerdescription {
   font-size: 14px !important;
+  color: #454238 !important;
+
   line-height: 17px !important;
   display: flex !important;
   align-items: center !important;

@@ -17,7 +17,8 @@
   display: flex !important;
   flex-direction: row !important;
   justify-content: space-between !important;
-  margin: auto !important;
+  /* margin: auto !important; */
+  margin: 0 auto 0 auto !important;
   text-align: center !important;
   width: 80% !important;
 }
@@ -50,6 +51,8 @@
   display: block !important;
   font-weight: 600 !important;
   font-size: 20px !important;
+  color: #454238 !important;
+
   /* height: 50px !important; */
   letter-spacing: 1px !important;
   margin: 0 20px !important;
@@ -85,6 +88,8 @@
   font-style: normal;
   font-weight: 600 !important;
   font-size: 30px !important;
+  color: #454238 !important;
+
   line-height: 43px;
   width: 64% !important;
   text-align: left;
@@ -118,9 +123,7 @@
   font-family: Urbanist !important;
   letter-spacing: normal;
 }
-li a:active {
-  color: #3399fe !important;
-}
+
 .mobilenav {
   display: flex !important;
   flex-direction: column !important;
@@ -128,6 +131,7 @@ li a:active {
 .mobilenav a {
   text-decoration: none !important;
   font-size: 20px !important;
+
   padding: 10px !important;
   color: #ffffff;
 }
