@@ -78,7 +78,7 @@
   align-items: center !important;
   height: 1500px !important;
   /* width: 1px !important; */
-  width: 100vw !important;
+  width: 99vw !important;
   background-position: center !important;
   background-size: contain !important;
   background-repeat: no-repeat !important;
@@ -185,7 +185,7 @@
     height: 1050px !important;
   }
 }
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 415px) {
   .Advertising_heading {
     font-size: 30px !important;
   }

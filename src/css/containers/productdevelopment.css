@@ -54,6 +54,9 @@
   .footersvg {
     padding-left: 6% !important;
   }
+  .footer_grid {
+    padding-top: 130% !important;
+  }
 }
 @media only screen and (max-width: 600px) {
   .productTypography {

@@ -4,10 +4,12 @@ import Typography from "@mui/material/Typography";
 import Ezboximg from "../assets/images/Exboximg.svg";
 import Followus from "../assets/images/Followus.svg";
 import Socialimg from "../assets/images/Footersocialimg.svg";
+import { Link } from "react-router-dom";
+
 const Footer = () => {
   return (
     <>
-      <Grid container spacing={1}>
+      <Grid container spacing={1} className="footer_grid1">
         <Grid
           item
           xs={12}
@@ -19,38 +21,50 @@ const Footer = () => {
           <div style={{ display: "flex", justifyContent: "center" }}>
             <img src={Ezboximg} className="ezimg"></img>
           </div>
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              marginTop: "15%",
-            }}
-          >
-            <Typography className="Footer_typo">Privacy Policy</Typography>
-            <Typography className="Footer_typo" sx={{ marginLeft: "4%" }}>
-              Terms & Conditions
-            </Typography>
-          </div>
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              marginTop: "3%",
-            }}
-          >
-            <Typography className="footer_typography">© 2022</Typography>
-            <Typography className="footer_ezbox"> EZBox Media</Typography>
-            <Typography className="footer_typography">
-              , All rights Reserved
-            </Typography>
+          <div>
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                marginTop: "15%",
+              }}
+            >
+              <Typography className="Footer_typo">Privacy Policy</Typography>
+              <Typography className="Footer_typo" sx={{ marginLeft: "4%" }}>
+                Terms & Conditions
+              </Typography>
+            </div>
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                marginTop: "3%",
+              }}
+            >
+              <Typography className="footer_typography">© 2022</Typography>
+              <Typography className="footer_ezbox"> EZBox Media</Typography>
+              <Typography className="footer_typography">
+                , All rights Reserved
+              </Typography>
+            </div>
           </div>
         </Grid>
         <Grid item xs={12} sm={12} md={4} className="footer_div">
-          <Typography className="footer_list">Advertising</Typography>
-          <Typography className="footer_list">Product Development</Typography>
-          <Typography className="footer_list">Consulting</Typography>
-          <Typography className="footer_list">Product Line</Typography>
-          <Typography className="footer_list">Contact</Typography>
+          <Link to="/Advertising">
+            <Typography className="footer_list">Advertising</Typography>
+          </Link>
+          <Link to="/ProductDevelopment">
+            <Typography className="footer_list">Product Development</Typography>
+          </Link>
+          <Link to="/Consulting">
+            <Typography className="footer_list">Consulting</Typography>
+          </Link>
+          <Link to="/ProductLine">
+            <Typography className="footer_list">Product Line</Typography>
+          </Link>
+          <Link to="/Contact">
+            <Typography className="footer_list">Contact</Typography>
+          </Link>
         </Grid>
         <Grid item xs={12} sm={12} md={4}>
           <div

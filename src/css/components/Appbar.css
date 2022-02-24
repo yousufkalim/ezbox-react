@@ -38,12 +38,19 @@
 #navbar li {
   display: inline-block !important;
 }
+.background {
+  background: linear-gradient(
+    180deg,
+    #3399fe 27.08%,
+    rgba(51, 153, 254, 0.14) 100%
+  ) !important;
+}
 #navbar li a {
   /* color: rgb(13, 26, 38); */
   display: block !important;
   font-weight: 600 !important;
   font-size: 20px !important;
-  height: 50px !important;
+  /* height: 50px !important; */
   letter-spacing: 1px !important;
   margin: 0 20px !important;
   padding: 0 3px !important;
@@ -53,13 +60,22 @@
   transition: all 0.5s ease !important;
   -webkit-transition: all 0.5s ease !important;
 }
-#navbar li:hover {
+
+#navbar ul li:hover {
   background: linear-gradient(
     180deg,
     #3399fe 27.08%,
     rgba(51, 153, 254, 0.14) 100%
-  );
+  ) !important;
 }
+
+/* .active {
+  background: linear-gradient(
+    180deg,
+    #3399fe 27.08%,
+    rgba(51, 153, 254, 0.14) 100%
+  ) !important;
+} */
 .home-logo {
   padding-left: 25%;
 }
@@ -70,11 +86,11 @@
   font-weight: 600 !important;
   font-size: 30px !important;
   line-height: 43px;
-  width: 58% !important;
+  width: 64% !important;
   text-align: left;
   /* padding-top: 15%; */
 
-  /* padding-right: 20%; */
+  padding-right: 7% !important;
 }
 .Home_img {
   display: flex !important;
@@ -102,12 +118,8 @@
   font-family: Urbanist !important;
   letter-spacing: normal;
 }
-#navbar li:active {
-  background: linear-gradient(
-    180deg,
-    #3399fe 27.08%,
-    rgba(51, 153, 254, 0.14) 100%
-  );
+li a:active {
+  color: #3399fe !important;
 }
 .mobilenav {
   display: flex !important;
@@ -119,6 +131,25 @@
   padding: 10px !important;
   color: #ffffff;
 }
+.Clientreviewsheading {
+  font-style: normal;
+  font-weight: 600 !important;
+  font-size: 48px !important;
+  line-height: 58px !important;
+  /* identical to box height */
+
+  text-align: center !important;
+  /* Blue - EZBox */
+
+  color: #3399fe;
+}
+.cleintreviewsheadingdiv {
+  padding-top: 15% !important;
+}
+.downarrowsvg {
+  cursor: pointer !important;
+}
+
 @media only screen and (max-width: 2400px) {
   .hamburgermenu {
     display: none !important;
@@ -129,6 +160,9 @@
   #navbar li a {
     margin: 0 11px !important;
     font-size: 16px;
+  }
+  .downarrowsvg {
+    top: 116% !important;
   }
 }
 @media only screen and (max-width: 1390px) {
@@ -151,6 +185,7 @@
   }
   .Home_typo {
     font-size: 20px !important;
+    padding-right: 0% !important;
   }
   .frame {
     width: 90% !important;

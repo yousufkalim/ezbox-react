@@ -7,6 +7,8 @@ import Advertising1 from "../assets/images/Advertising1.svg";
 import Advertising2 from "../assets/images/Advertising2.svg";
 import Advertising3 from "../assets/images/Advertising3.svg";
 import Button from "@mui/material/Button";
+import { Link } from "react-router-dom";
+
 // import AdvestingSvg from "../assets/images/AdvestisingSvg.svg";
 export const Advertising = () => {
   return (
@@ -57,9 +59,11 @@ export const Advertising = () => {
             }}
             className="advertisingbtn"
           >
-            <Button variant="contained" className="Contactusbutton">
-              Contact us
-            </Button>
+            <Link to="/Contact" activeClassName="active">
+              <Button variant="contained" className="Contactusbutton">
+                Contact us
+              </Button>
+            </Link>
           </div>
         </Grid>
       </Grid>
