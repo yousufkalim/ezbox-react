@@ -16,7 +16,7 @@
 
   /* Black - EZBox */
 
-  color: #454238;
+  color: #454238 !important;
 }
 /* .bgimg {
   display: flex !important;
@@ -31,6 +31,9 @@
 .bottomgrid {
   display: flex;
   padding-bottom: 25%;
+}
+.linesvg {
+  overflow: hidden !important;
 }
 @media only screen and (max-width: 1550px) {
   .linesvg {

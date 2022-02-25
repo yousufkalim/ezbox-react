@@ -2,6 +2,8 @@
   font-style: normal !important;
   font-weight: 600 !important;
   font-size: 32px !important;
+  color: #454238 !important;
+
   line-height: 38px !important;
   /* padding-right: 19% !important; */
 }
@@ -56,6 +58,9 @@
   flex-direction: column !important;
   align-items: flex-end !important;
   justify-content: center !important;
+}
+.consultingimg {
+  width: 98% !important;
 }
 @media only screen and (max-width: 1550px) {
   .Consultingtypo {
