@@ -15,6 +15,7 @@ import Footer from "../components/Footer";
 import CustomerReview from "../components/CustomerReviews";
 import Left from "../assets/images/Left.svg";
 import Right from "../assets/images/Right.svg";
+import { HomeScreen } from "../Data/Home";
 
 // Home Component
 export default function Home() {
@@ -23,73 +24,79 @@ export default function Home() {
   return (
     <>
       <AppBar></AppBar>
-      <Grid container spacing={2}>
-        <Grid
-          item
-          xs={12}
-          sm={12}
-          md={5}
-          sx={{
-            display: "flex",
-            justifyContent: "center",
-          }}
-          className="Typo_Grid"
-        >
-          <Typography className="Home_typo">
-            A product creation house, dealing with creating bespoke and ready
-            made cutting edge products utilising Al for advertising and audience
-            engagement measurement.
-          </Typography>
-        </Grid>
-        <Grid item xs={12} sm={12} md={7} className="Home_img">
-          <div className="Home_img">
-            <img src={Frame} className="frame"></img>
-          </div>
-        </Grid>
-      </Grid>
-      <div className="Down_Arrow">
-        <img
-          src={DownArrow}
-          style={{ position: "absolute", top: "110%" }}
-          className="downarrowsvg"
-          onClick={executeScroll}
-        ></img>
-      </div>
-      <Grid
-        container
-        spacing={2}
-        sx={{ paddingTop: "5%", display: "flex", justifyContent: "center" }}
-      >
-        <Grid
-          xs={12}
-          sm={12}
-          md={6}
-          sx={{ display: "flex", justifyContent: "center" }}
-          className="ytplayer"
-        >
-          <img src={Player} style={{ width: "68%" }}></img>
-        </Grid>
-        <Grid
-          xs={12}
-          sm={12}
-          md={6}
-          xs={{ display: "flex", alignItems: "center" }}
-        >
-          <div className="ezboxx">
+      {HomeScreen.map((data) => (
+        <>
+          <Grid container spacing={2}>
+            <Grid
+              item
+              xs={12}
+              sm={12}
+              md={5}
+              sx={{
+                display: "flex",
+                justifyContent: "center",
+              }}
+              className="Typo_Grid"
+            >
+              <Typography className="Home_typo">{data.text}</Typography>
+            </Grid>
+            <Grid item xs={12} sm={12} md={7} className="Home_img">
+              <div className="Home_img">
+                <img
+                  src={Frame}
+                  className="frame"
+                  sx={{ width: "100%", height: "800px", objectFit: "cover" }}
+                ></img>
+              </div>
+            </Grid>
+          </Grid>
+          <div className="Down_Arrow">
             <img
-              src={Ezboximg}
-              style={{ paddingTop: "31%" }}
-              className="homeezbox"
+              src={DownArrow}
+              style={{ position: "absolute", top: "110%" }}
+              className="downarrowsvg"
+              onClick={executeScroll}
             ></img>
-            <img src={QuestionMark}></img>
           </div>
-          <div
-            style={{ display: "flex", justifyContent: "right" }}
-            className="ezbox_logo"
+          <Grid
+            container
+            spacing={2}
+            sx={{ paddingTop: "5%", display: "flex", justifyContent: "center" }}
           >
-            <img src={Ez} className="ezbox_img"></img>
-          </div>
-        </Grid>
+            <Grid
+              xs={12}
+              sm={12}
+              md={6}
+              sx={{ display: "flex", justifyContent: "center" }}
+              className="ytplayer"
+            >
+              <img src={Player} style={{ width: "68%" }}></img>
+            </Grid>
+            <Grid
+              xs={12}
+              sm={12}
+              md={6}
+              xs={{ display: "flex", alignItems: "center" }}
+            >
+              <div className="ezboxx">
+                <img
+                  src={Ezboximg}
+                  style={{ paddingTop: "31%" }}
+                  className="homeezbox"
+                ></img>
+                <img src={QuestionMark}></img>
+              </div>
+              <div
+                style={{ display: "flex", justifyContent: "right" }}
+                className="ezbox_logo"
+              >
+                <img src={Ez} className="ezbox_img"></img>
+              </div>
+            </Grid>
+          </Grid>
+        </>
+      ))}
+      <Grid>
         <div className="cleintreviewsheadingdiv" ref={myRef}>
           <Typography className="Clientreviewsheading">
             Client Reviews
@@ -107,7 +114,6 @@ export default function Home() {
           </Grid>
         </Grid>
       </Grid>
-
       <div style={{ paddingTop: "20%" }}>
         <Footer></Footer>
       </div>
