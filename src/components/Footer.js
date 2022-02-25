@@ -14,7 +14,7 @@ const Footer = () => {
           item
           xs={12}
           sm={12}
-          md={4}
+          md={4.6}
           // className="footer_div"
           sx={{ paddingTop: "3% !important" }}
         >
@@ -49,7 +49,7 @@ const Footer = () => {
             </div>
           </div>
         </Grid>
-        <Grid item xs={12} sm={12} md={4} className="footer_div">
+        <Grid item xs={12} sm={12} md={3.4} className="footer_div">
           <Link to="/Advertising">
             <Typography className="footer_list">Advertising</Typography>
           </Link>
