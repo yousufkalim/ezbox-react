@@ -1,10 +1,33 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import EzbozLogo from "../assets/images/Ezlogo.svg";
 import Menu from "@mui/material/Menu";
 import MenuIcon from "@mui/icons-material/Menu";
 import IconButton from "@mui/material/IconButton";
 import { Link, useHistory } from "react-router-dom";
+import Api from "../api/index";
+import assetsURL from "../utils/Assets";
+
 const AppBar = () => {
+  const [isLoading, setIsLoading] = useState(true);
+  const [navData, setnavData] = useState(null);
+
+  useEffect(() => {
+    getNav();
+  }, []);
+
+  const getNav = async () => {
+    let response;
+    try {
+      response = await Api("get", `/nav/`);
+      const _navData = response.data.data;
+
+      setnavData(_navData);
+      // setIsLoading(false);
+    } catch (e) {
+      console.trace(e);
+    }
+  };
+
   const history = useHistory();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
@@ -21,7 +44,11 @@ const AppBar = () => {
         <div className="nav-wrapper">
           <div className="" style={{ paddingTop: "16px" }}>
             <Link to="/" activeClassName="active">
-              <img className="logo" src={EzbozLogo} alt="" />
+              <img
+                className="logo"
+                src={navData ? assetsURL(navData.logo) : EzbozLogo}
+                alt=""
+              />
             </Link>
           </div>
           <ul id="menu">
