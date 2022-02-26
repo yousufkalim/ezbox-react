@@ -13,6 +13,11 @@ import Api from "../api/index";
 
 const Contact = () => {
   const [loading, setLoading] = useState(false);
+  const [contact, setContact] = useState({});
+
+  const handleInput = (e) => {
+    setContact({ ...contact, [e.target.name]: e.target.value });
+  };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -21,25 +26,18 @@ const Contact = () => {
       return;
     }
 
-    const data = new FormData(event.currentTarget);
-
-    let response;
-
     try {
-      const body = {
-        name: data.get("Name"),
-        number: data.get("Number"),
-        email: data.get("Email"),
-        message: data.get("Message"),
-      };
-
-      console.log(body);
-
       setLoading(true);
 
-      response = await Api("post", "/contact", body);
+      await Api("post", "/contact", contact);
 
-      console.log(response);
+      setContact({
+        name: "",
+        number: "",
+        email: "",
+        message: "",
+      });
+      toast.success("Request submitted successfully");
     } catch (e) {
       console.trace(e);
     }
@@ -58,26 +56,34 @@ const Contact = () => {
                 <input
                   type="text"
                   placeholder="Name"
-                  name="Name"
+                  name="name"
+                  value={contact.name}
                   className="inputfield"
+                  onChange={handleInput}
                 />
                 <input
                   type="text"
-                  name="Number"
+                  name="number"
                   placeholder="Contact No"
                   className="inputfield"
+                  value={contact.number}
+                  onChange={handleInput}
                 />
                 <input
                   type="text"
-                  name="Email"
+                  name="email"
                   placeholder="Email Address"
                   className="inputfield"
+                  value={contact.email}
+                  onChange={handleInput}
                 />
                 <textarea
                   type="text"
                   placeholder="You want to ask?"
-                  name="Message"
+                  name="message"
                   className="textarea"
+                  value={contact.message}
+                  onChange={handleInput}
                 />
                 <Button
                   type="submit"
