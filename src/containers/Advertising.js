@@ -7,6 +7,7 @@ import Leftimg from "../assets/Advertisingimages/leftimg.jpg";
 import Centerimg from "../assets/Advertisingimages/centerimg.jpg";
 import Rightimg from "../assets/Advertisingimages/rightimg.jpg";
 
+import FontLoader from "../components/FontLoader";
 import Button from "@mui/material/Button";
 import { Link } from "react-router-dom";
 import { Advertisings } from "../Data/Advertising";
@@ -39,19 +40,36 @@ export const Advertising = () => {
     <>
       <AppBar></AppBar>
       <>
-        {console.log(`THSI IS THE advertisingData: ${advertisingData}`)}
         {isLoading ? (
           <></>
         ) : (
           <>
+            <FontLoader
+              fonts={[
+                advertisingData.title_font,
+                advertisingData.text_font,
+                advertisingData.textbottom_font,
+              ]}
+            />
+
             <Grid container spacing={1}>
               <Grid xs={12} sm={12} md={5} className="upper_left_div">
-                <Typography className="Advertising_heading">
+                <Typography
+                  className="Advertising_heading"
+                  style={{
+                    fontFamily: advertisingData.title_font,
+                  }}
+                >
                   {advertisingData.title}
                 </Typography>
               </Grid>
               <Grid xs={12} sm={12} md={7} className="upper_right_div">
-                <Typography className="Advertising_para">
+                <Typography
+                  className="Advertising_para"
+                  style={{
+                    fontFamily: advertisingData.text_font,
+                  }}
+                >
                   {advertisingData.text}
                 </Typography>
               </Grid>
@@ -115,7 +133,12 @@ export const Advertising = () => {
             </Grid>
             <Grid container spacing={1} className="backimg">
               <Grid xs={12} sm={12} md={6} className="bottom_left_div">
-                <Typography className="Advertising-heading">
+                <Typography
+                  className="Advertising-heading"
+                  style={{
+                    fontFamily: advertisingData.textbottom_font,
+                  }}
+                >
                   {advertisingData.textbottom}
                 </Typography>
                 <div
