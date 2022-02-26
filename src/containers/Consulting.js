@@ -10,6 +10,7 @@ import { Link } from "react-router-dom";
 // import { Consultings } from "../Data/Consulting.js";
 import Api from "../api/index";
 import assetsURL from "../utils/Assets";
+import FontLoader from "../components/FontLoader";
 
 const Consulting = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -39,6 +40,9 @@ const Consulting = () => {
           <></>
         ) : (
           <>
+            <FontLoader
+              fonts={[consultingData.text_font, consultingData.textbottom_font]}
+            />
             <Grid container spacing={1} sx={{ paddingBottom: "10%" }}>
               <Grid xs={12} sm={12} md={6}>
                 <div className="Consultingimgdiv">
@@ -58,12 +62,22 @@ const Consulting = () => {
                 </div>
               </Grid>
               <Grid xs={12} sm={12} md={5} className="Consultingtypogrid">
-                <Typography className="Consultingtypo">
+                <Typography
+                  className="Consultingtypo"
+                  style={{
+                    fontFamily: consultingData.text_font,
+                  }}
+                >
                   {consultingData.text}
                 </Typography>
                 <div className="buttondiv">
                   <div className="bb">
-                    <Typography className="buttontypo">
+                    <Typography
+                      className="buttontypo"
+                      style={{
+                        fontFamily: consultingData.textbottom_font,
+                      }}
+                    >
                       {consultingData.textbottom}
                     </Typography>
                     <Link to="/Contact">
