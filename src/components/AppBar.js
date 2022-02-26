@@ -9,7 +9,7 @@ import assetsURL from "../utils/Assets";
 
 const AppBar = () => {
   const [isLoading, setIsLoading] = useState(true);
-  const [navData, setnavData] = useState(null);
+  const [navData, setnavData] = useState({});
 
   useEffect(() => {
     getNav();
@@ -18,8 +18,8 @@ const AppBar = () => {
   const getNav = async () => {
     let response;
     try {
-      response = await Api("get", `/nav/`);
-      const _navData = response.data.data;
+      response = await Api("get", `/navigation`);
+      const _navData = response.data.navigation;
 
       setnavData(_navData);
       // setIsLoading(false);
@@ -42,11 +42,11 @@ const AppBar = () => {
     <>
       <nav id="navbar" class="">
         <div className="nav-wrapper">
-          <div className="" style={{ paddingTop: "16px" }}>
+          <div className="logoImage" style={{ paddingTop: "16px" }}>
             <Link to="/" activeClassName="active">
               <img
                 className="logo"
-                src={navData ? assetsURL(navData.logo) : EzbozLogo}
+                src={navData.logo ? assetsURL(navData.logo) : EzbozLogo}
                 alt=""
               />
             </Link>
@@ -111,10 +111,10 @@ const AppBar = () => {
               </Link>
             </li>
             <li>
-              <Link to="#">Blog</Link>
+              <Link to={navData.blog}>Blog</Link>
             </li>
             <li>
-              <Link tp="#">Forum</Link>
+              <Link tp={navData.forum}>Forum</Link>
             </li>
           </ul>
         </div>
