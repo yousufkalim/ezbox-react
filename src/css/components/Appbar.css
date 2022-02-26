@@ -1,10 +1,10 @@
 #navbar {
-  background: linear-gradient(
+  /* background: linear-gradient(
     180deg,
     #ffffff 27.08%,
     rgba(255, 255, 255, 0.15) 100%
-  ) !important;
-
+  ) !important; */
+  background: #ffffff !important;
   position: fixed !important;
   top: 0 !important;
   height: 94px !important;
@@ -45,13 +45,14 @@
     #3399fe 27.08%,
     rgba(51, 153, 254, 0.14) 100%
   ) !important;
+  color: #fcfcfc !important;
 }
 #navbar li a {
   /* color: rgb(13, 26, 38); */
   display: block !important;
   font-weight: 600 !important;
   font-size: 20px !important;
-  color: #454238 !important;
+  color: #454238;
 
   /* height: 50px !important; */
   letter-spacing: 1px !important;
@@ -64,12 +65,12 @@
   -webkit-transition: all 0.5s ease !important;
 }
 
-#navbar ul li:hover {
+#navbar ul li a:hover {
   background: linear-gradient(
     180deg,
     #3399fe 27.08%,
     rgba(51, 153, 254, 0.14) 100%
-  ) !important;
+  );
 }
 
 /* .active {
@@ -109,6 +110,9 @@
     #f7a119 0%,
     rgba(247, 161, 25, 0) 100%
   ) !important;
+  width: 80% !important;
+  height: 100%;
+  object-fit: cover !important;
 }
 .Down_Arrow {
   display: flex !important;
@@ -152,6 +156,12 @@
 }
 .downarrowsvg {
   cursor: pointer !important;
+  margin-top: 3% !important;
+}
+.ezbox_img {
+  width: 70%;
+  object-fit: cover !important;
+  height: 520px !important;
 }
 
 @media only screen and (max-width: 2400px) {
@@ -221,15 +231,20 @@
   }
   .ezbox_img {
     width: 100% !important;
+    height: 267px !important;
   }
   .mobilenav a {
     font-size: 16px !important;
   }
   .homeezbox {
-    width: 88% !important;
+    width: 70% !important;
   }
   .advertisingdiv {
     padding-left: 0px !important;
+  }
+  .questionmark {
+    padding-top: 2% !important;
+    width: 20% !important;
   }
 }
 @media only screen and (max-width: 430px) {
