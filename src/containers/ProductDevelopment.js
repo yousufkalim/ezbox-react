@@ -12,6 +12,7 @@ import Rightimg from "../assets/Advertisingimages/rightimg.jpg";
 import { ProductsDevelopment } from "../Data/ProductDevelopment.js";
 import Api from "../api/index";
 import assetsURL from "../utils/Assets";
+import FontLoader from "../components/FontLoader";
 
 const ProductDevelopment = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -48,9 +49,15 @@ const ProductDevelopment = () => {
           </>
         ) : (
           <>
+            <FontLoader fonts={[productdevData.text_font]} />
             <Grid container spacing={1} className="productmaingrid">
               <Grid sx={12} sm={12} md={6} className="typographygrid">
-                <Typography className="productTypography">
+                <Typography
+                  className="productTypography"
+                  style={{
+                    fontFamily: productdevData.text_font,
+                  }}
+                >
                   {productdevData.text}
                 </Typography>
               </Grid>
