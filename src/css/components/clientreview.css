@@ -17,6 +17,11 @@
 .customerimg {
   padding-top: 12% !important;
   padding-bottom: 8% !important;
+  width: 80px;
+  height: 115px;
+  object-fit: cover;
+  overflow: hidden;
+  border-radius: 50%;
 }
 .customername {
   font-weight: 600 !important;

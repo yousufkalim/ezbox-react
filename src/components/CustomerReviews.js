@@ -1,12 +1,23 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import ClientImg1 from "../assets/images/picture.svg";
 import Rating from "@mui/material/Rating";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import { Reviews } from "../Data/Reviews";
+import Api from "../api/index";
+import assetsURL from "../utils/Assets";
 
 const CustomerReviews = () => {
-  const [value, setValue] = React.useState(5);
+  let [reviews, setReviews] = useState([]);
+
+  useEffect(() => {
+    getReviews();
+  }, []);
+
+  const getReviews = async () => {
+    const res = await Api("get", "/reviews");
+
+    setReviews(res.data.reviews);
+  };
 
   const responsive = {
     superLargeDesktop: {
@@ -38,13 +49,17 @@ const CustomerReviews = () => {
           autoPlay={true}
           className="CustomerreviewCarousel"
         >
-          {Reviews.map((item) => (
+          {reviews.map((item) => (
             <div className="clientreview">
-              <img src={ClientImg1} className="customerimg" alt="img" />
+              <img
+                src={item.image ? assetsURL(item.image) : ClientImg1}
+                className="customerimg"
+                alt="img"
+              />
               <h5 className="customername">{item.name}</h5>
               <Rating
                 name="read-only"
-                value={value}
+                value={item.rating}
                 size="small"
                 readOnly
                 // sx={{ color: "yellow !important" }}
