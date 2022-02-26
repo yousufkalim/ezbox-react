@@ -1,15 +1,15 @@
 import React from "react";
 import GoogleFontLoader from "react-google-font-loader";
 
-function FontLoader({ font }) {
+function FontLoader({ fonts }) {
   return (
     <GoogleFontLoader
-      fonts={[
-        {
-          font: font,
+      fonts={fonts.map((font) => {
+        return {
+          font: font || "Urbanist",
           weights: [400, "400i"],
-        },
-      ]}
+        };
+      })}
     />
   );
 }

@@ -56,7 +56,7 @@ export default function Home() {
           </>
         ) : (
           <>
-            <FontLoader font={homeData.text_font} />
+            <FontLoader fonts={[homeData.text_font]} />
             <Grid container spacing={2}>
               <Grid
                 item

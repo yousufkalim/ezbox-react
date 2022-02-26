@@ -5,6 +5,7 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import Api from "../api/index";
 import assetsURL from "../utils/Assets";
+import FontLoader from "./FontLoader";
 
 const CustomerReviews = () => {
   let [reviews, setReviews] = useState([]);
@@ -51,12 +52,18 @@ const CustomerReviews = () => {
         >
           {reviews.map((item) => (
             <div className="clientreview">
+              <FontLoader fonts={[item.name_font, item.message_font]} />
               <img
                 src={item.image ? assetsURL(item.image) : ClientImg1}
                 className="customerimg"
                 alt="img"
               />
-              <h5 className="customername">{item.name}</h5>
+              <h5
+                className="customername"
+                style={{ fontFamily: item.name_font }}
+              >
+                {item.name}
+              </h5>
               <Rating
                 name="read-only"
                 value={item.rating}
@@ -65,7 +72,12 @@ const CustomerReviews = () => {
                 // sx={{ color: "yellow !important" }}
               />
 
-              <p className="customerdescription">{item.message}</p>
+              <p
+                className="customerdescription"
+                style={{ fontFamily: item.message_font }}
+              >
+                {item.message}
+              </p>
             </div>
           ))}
         </Carousel>
