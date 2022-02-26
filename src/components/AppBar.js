@@ -111,10 +111,14 @@ const AppBar = () => {
               </Link>
             </li>
             <li>
-              <Link to={navData.blog}>Blog</Link>
+              <a href={navData.blog} target="_blank">
+                Blog
+              </a>
             </li>
             <li>
-              <Link tp={navData.forum}>Forum</Link>
+              <a href={navData.forum} target="_blank">
+                Forum
+              </a>
             </li>
           </ul>
         </div>
