@@ -13,7 +13,7 @@ import assetsURL from "../utils/Assets";
 
 const Consulting = () => {
   const [isLoading, setIsLoading] = useState(true);
-  const [consultingData, setconsultingData] = useState(null);
+  const [consultingData, setconsultingData] = useState({});
 
   useEffect(() => {
     getConsultingdata();
@@ -23,7 +23,7 @@ const Consulting = () => {
     let response;
     try {
       response = await Api("get", `/consulting/`);
-      const _consultingData = response.data.data;
+      const _consultingData = response.data.consulting;
 
       setconsultingData(_consultingData);
       setIsLoading(false);

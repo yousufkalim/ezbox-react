@@ -15,7 +15,7 @@ import assetsURL from "../utils/Assets";
 
 export const ProductLine = () => {
   const [isLoading, setIsLoading] = useState(true);
-  const [productlineData, setproductlineData] = useState(null);
+  const [productlineData, setproductlineData] = useState([]);
 
   useEffect(() => {
     geProductlinedata();
@@ -76,11 +76,7 @@ export const ProductLine = () => {
                     className="imggrid"
                   >
                     <img
-                      src={
-                        productlineData
-                          ? assetsURL(productlineData.image)
-                          : Centerimg
-                      }
+                      src={data.image ? assetsURL(data.image) : Centerimg}
                       style={{
                         width: "90%",
                         zIndex: "1",

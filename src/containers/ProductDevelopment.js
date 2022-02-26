@@ -15,7 +15,7 @@ import assetsURL from "../utils/Assets";
 
 const ProductDevelopment = () => {
   const [isLoading, setIsLoading] = useState(true);
-  const [productdevData, setproductdevData] = useState(null);
+  const [productdevData, setproductdevData] = useState({});
 
   useEffect(() => {
     getProductdev();
@@ -25,7 +25,7 @@ const ProductDevelopment = () => {
     let response;
     try {
       response = await Api("get", `/productdev/`);
-      const _productdevData = response.data.data;
+      const _productdevData = response.data.productDev;
 
       setproductdevData(_productdevData);
       setIsLoading(false);
