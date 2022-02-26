@@ -12,6 +12,7 @@ import Productsvg from "../assets/images/Productsvg.svg";
 import { ProductsLine } from "../Data/Productline";
 import Api from "../api/index";
 import assetsURL from "../utils/Assets";
+import FontLoader from "../components/FontLoader";
 
 export const ProductLine = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -45,6 +46,7 @@ export const ProductLine = () => {
           <>
             {productlineData.map((data) => (
               <>
+                <FontLoader fonts={[data.title_font, data.description_font]} />
                 <Grid
                   container
                   spacing={1}
@@ -57,10 +59,20 @@ export const ProductLine = () => {
                     md={6}
                     sx={{ padding: "10%", zIndex: "1" }}
                   >
-                    <Typography className="ProductHeading">
+                    <Typography
+                      className="ProductHeading"
+                      style={{
+                        fontFamily: data.title_font,
+                      }}
+                    >
                       {data.title}
                     </Typography>
-                    <Typography className="ProductDescription">
+                    <Typography
+                      className="ProductDescription"
+                      style={{
+                        fontFamily: data.description_font,
+                      }}
+                    >
                       {data.description}
                     </Typography>
                   </Grid>
