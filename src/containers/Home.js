@@ -24,7 +24,7 @@ import assetsURL from "../utils/Assets";
 // Home Component
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
-  const [homeData, sethomeData] = useState(null);
+  const [homeData, sethomeData] = useState({});
 
   useEffect(() => {
     geHomedata();
@@ -33,8 +33,8 @@ export default function Home() {
   const geHomedata = async () => {
     let response;
     try {
-      response = await Api("get", `/home/`);
-      const _homeData = response.data.data;
+      response = await Api("get", `/homeScreen`);
+      const _homeData = response.data.home;
 
       sethomeData(_homeData);
       setIsLoading(false);
@@ -72,7 +72,7 @@ export default function Home() {
               <Grid item xs={12} sm={12} md={7} className="Home_img">
                 <div className="Home_img">
                   <img
-                    src={homeData ? assetsURL(homeData.image) : Frame}
+                    src={homeData.image ? assetsURL(homeData.image) : Frame}
                     className="frame"
                   ></img>
                 </div>
@@ -81,7 +81,6 @@ export default function Home() {
             <div className="Down_Arrow">
               <img
                 src={DownArrow}
-                style={{}}
                 className="downarrowsvg"
                 onClick={executeScroll}
               ></img>
@@ -108,7 +107,7 @@ export default function Home() {
                 ></img>
               </Grid>
               <Grid
-                xs={12}
+                // xs={12}
                 sm={12}
                 md={6}
                 xs={{ display: "flex", alignItems: "center" }}
