@@ -1,3 +1,6 @@
 export default function assetsURL(str) {
-  return `${"https://ezbox.falconit.com.pk/"}${String(str).replace("\\", "/")}`;
+  return `${process.env.REACT_APP_SERVER_MEDIA_URL}${String(str).replace(
+    "\\",
+    "/"
+  )}`;
 }
