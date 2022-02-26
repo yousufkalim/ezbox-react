@@ -18,6 +18,7 @@ import Left from "../assets/images/Left.svg";
 import Right from "../assets/images/Right.svg";
 import { HomeScreen } from "../Data/Home";
 import Api from "../api/index";
+import FontLoader from "../components/FontLoader";
 
 import assetsURL from "../utils/Assets";
 
@@ -55,6 +56,7 @@ export default function Home() {
           </>
         ) : (
           <>
+            <FontLoader font={homeData.text_font} />
             <Grid container spacing={2}>
               <Grid
                 item
@@ -67,7 +69,14 @@ export default function Home() {
                 }}
                 className="Typo_Grid"
               >
-                <Typography className="Home_typo">{homeData.text}</Typography>
+                <Typography
+                  className="Home_typo"
+                  style={{
+                    fontFamily: homeData.text_font,
+                  }}
+                >
+                  {homeData.text}
+                </Typography>
               </Grid>
               <Grid item xs={12} sm={12} md={7} className="Home_img">
                 <div className="Home_img">
