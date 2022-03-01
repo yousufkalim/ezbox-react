@@ -4,9 +4,6 @@ import Footer from "../components/Footer";
 import Grid from "@mui/material/Grid";
 import { Typography } from "@mui/material";
 import Button from "@mui/material/Button";
-// import ProductLine1 from "../assets/images/Productline1.svg";
-// import ProductLine2 from "../assets/images/Productline2.svg";
-// import ProductLine3 from "../assets/images/Productline3.svg";
 import Centerimg from "../assets/Productlineimages/centerimage.jpg";
 import Productsvg from "../assets/images/Productsvg.svg";
 import { ProductsLine } from "../Data/Productline";
@@ -14,7 +11,7 @@ import Api from "../api/index";
 import assetsURL from "../utils/Assets";
 import FontLoader from "../components/FontLoader";
 
-export const ProductLine = () => {
+export default function ProductLine (){
   const [isLoading, setIsLoading] = useState(true);
   const [productlineData, setproductlineData] = useState([]);
 

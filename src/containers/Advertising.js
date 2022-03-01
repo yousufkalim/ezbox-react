@@ -15,7 +15,7 @@ import Api from "../api/index";
 import assetsURL from "../utils/Assets";
 
 // import AdvestingSvg from "../assets/images/AdvestisingSvg.svg";
-export const Advertising = () => {
+export default function Advertising (){
   const [isLoading, setIsLoading] = useState(true);
   const [advertisingData, setadvertisingData] = useState(null);
 
@@ -26,9 +26,8 @@ export const Advertising = () => {
   const getAdvertising = async () => {
     let response;
     try {
-      response = await Api("get", `/advertising/`);
-      const _advertisingData = response.data.advertise;
-
+      response = await Api("get", `/layout1/`);
+      const _advertisingData = response.data.data[0];
       setadvertisingData(_advertisingData);
       setIsLoading(false);
     } catch (e) {

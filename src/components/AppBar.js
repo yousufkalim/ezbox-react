@@ -3,7 +3,7 @@ import EzbozLogo from "../assets/images/Ezlogo.svg";
 import Menu from "@mui/material/Menu";
 import MenuIcon from "@mui/icons-material/Menu";
 import IconButton from "@mui/material/IconButton";
-import { Link, useHistory } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import Api from "../api/index";
 import assetsURL from "../utils/Assets";
 
@@ -28,7 +28,7 @@ const AppBar = () => {
     }
   };
 
-  const history = useHistory();
+  const location = useLocation();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
@@ -56,7 +56,7 @@ const AppBar = () => {
               <Link
                 to="/Advertising"
                 className={`${
-                  history.location.pathname === "/Advertising"
+                  location.pathname === "/Advertising"
                     ? "background"
                     : ""
                 }`}
@@ -68,7 +68,7 @@ const AppBar = () => {
               <Link
                 to="/ProductDevelopment"
                 className={`${
-                  history.location.pathname === "/ProductDevelopment"
+                  location.pathname === "/ProductDevelopment"
                     ? "background"
                     : ""
                 }`}
@@ -80,7 +80,7 @@ const AppBar = () => {
               <Link
                 to="/Consulting"
                 className={`${
-                  history.location.pathname === "/Consulting"
+                  location.pathname === "/Consulting"
                     ? "background"
                     : ""
                 }`}
@@ -92,7 +92,7 @@ const AppBar = () => {
               <Link
                 to="/ProductLine"
                 className={`${
-                  history.location.pathname === "/ProductLine"
+                  location.pathname === "/ProductLine"
                     ? "background"
                     : ""
                 }`}
@@ -104,7 +104,7 @@ const AppBar = () => {
               <Link
                 to="/Contact"
                 className={`${
-                  history.location.pathname === "/Contact" ? "background" : ""
+                  location.pathname === "/Contact" ? "background" : ""
                 }`}
               >
                 Contact

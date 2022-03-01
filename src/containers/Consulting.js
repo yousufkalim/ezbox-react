@@ -23,8 +23,8 @@ const Consulting = () => {
   const getConsultingdata = async () => {
     let response;
     try {
-      response = await Api("get", `/consulting/`);
-      const _consultingData = response.data.consulting;
+      response = await Api("get", `/layout3/`);
+      const _consultingData = response.data.data[0];
 
       setconsultingData(_consultingData);
       setIsLoading(false);

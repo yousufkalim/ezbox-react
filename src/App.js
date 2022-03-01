@@ -4,7 +4,7 @@ import { ToastContainer, Flip } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 // Files
-import Index from "./routes/index";
+import Main from "./routes/main";
 import "./css/index.css";
 
 // Component
@@ -20,7 +20,7 @@ function App() {
       />
 
       {/* Routes */}
-      <Index />
+      <Main />
     </div>
   );
 }

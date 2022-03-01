@@ -25,8 +25,8 @@ const ProductDevelopment = () => {
   const getProductdev = async () => {
     let response;
     try {
-      response = await Api("get", `/productdev/`);
-      const _productdevData = response.data.productDev;
+      response = await Api("get", `/layout2/`);
+      const _productdevData = response.data.data[0];
 
       setproductdevData(_productdevData);
       setIsLoading(false);
