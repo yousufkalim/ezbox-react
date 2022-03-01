@@ -4,7 +4,7 @@ import { ToastContainer, Flip } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 // Files
-import Main from "./routes/main";
+import Main from "./routes/Main";
 import "./css/index.css";
 
 // Component

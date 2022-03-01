@@ -6,59 +6,53 @@ import Grid from "@mui/material/Grid";
 import Leftimg from "../assets/Productdevimages/leftimg.jpg";
 import Centerimg from "../assets/Advertisingimages/centerimg.jpg";
 import Rightimg from "../assets/Advertisingimages/rightimg.jpg";
-// import Productdevelopmen1 from "../assets/images/Productdevelopment1.svg";
-// import Productdevelopmen2 from "../assets/images/Productdevelopment2.svg";
-// import Productdevelopmen3 from "../assets/images/Productdevelopment3.svg";
-import { ProductsDevelopment } from "../Data/ProductDevelopment.js";
 import Api from "../api/index";
 import assetsURL from "../utils/Assets";
 import FontLoader from "../components/FontLoader";
 
-const ProductDevelopment = () => {
+import { useParams } from "react-router-dom";
+
+const Layout2 = () => {
   const [isLoading, setIsLoading] = useState(true);
-  const [productdevData, setproductdevData] = useState({});
+  const [layoutData, setLayoutData] = useState({});
+
+  const { layout_id } = useParams();
 
   useEffect(() => {
-    getProductdev();
+    getData();
   }, []);
 
-  const getProductdev = async () => {
+  const getData = async () => {
     let response;
     try {
-      response = await Api("get", `/layout2/`);
-      const _productdevData = response.data.data[0];
-
-      setproductdevData(_productdevData);
+      response = await Api("get", `/layout/${layout_id}`);
+      const _data = response.data.data;
+      setLayoutData(_data);
       setIsLoading(false);
     } catch (e) {
       console.trace(e);
     }
   };
 
-  // ProductsDevelopment.map((data) => {
-  //   console.log("data is ", data.text);
-  // });
   return (
     <>
       <AppBar></AppBar>
-      {/* {ProductsDevelopment.map((data) => ( */}
       <>
         {isLoading ? (
           <>
-            <h1>XYZ</h1>
           </>
         ) : (
           <>
-            <FontLoader fonts={[productdevData.text_font]} />
+            <FontLoader fonts={[layoutData.text_font]} />
             <Grid container spacing={1} className="productmaingrid">
               <Grid sx={12} sm={12} md={6} className="typographygrid">
                 <Typography
                   className="productTypography"
                   style={{
-                    fontFamily: productdevData.text_font,
+                    fontFamily: layoutData.text_font,
                   }}
                 >
-                  {productdevData.text}
+                  {layoutData.text}
                 </Typography>
               </Grid>
             </Grid>
@@ -66,7 +60,7 @@ const ProductDevelopment = () => {
               <Grid item xs={12} sm={12} md={4} className="advertisingdiv">
                 <img
                   src={
-                    productdevData ? assetsURL(productdevData.leftImg) : Leftimg
+                    layoutData ? assetsURL(layoutData.leftImg) : Leftimg
                   }
                   className="advertisingimg"
                   style={{
@@ -86,8 +80,8 @@ const ProductDevelopment = () => {
               >
                 <img
                   src={
-                    productdevData
-                      ? assetsURL(productdevData.centerImg)
+                    layoutData
+                      ? assetsURL(layoutData.centerImg)
                       : Centerimg
                   }
                   className="advertisingimg"
@@ -108,8 +102,8 @@ const ProductDevelopment = () => {
               >
                 <img
                   src={
-                    productdevData
-                      ? assetsURL(productdevData.rightImg)
+                    layoutData
+                      ? assetsURL(layoutData.rightImg)
                       : Centerimg
                   }
                   className="advertisingimg"
@@ -131,4 +125,4 @@ const ProductDevelopment = () => {
   );
 };
 
-export default ProductDevelopment;
+export default Layout2;

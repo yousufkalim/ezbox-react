@@ -1,0 +1,9 @@
+.splashdiv {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  padding-top: 17% !important;
+}
+.splashimg {
+  width: 50% !important;
+}

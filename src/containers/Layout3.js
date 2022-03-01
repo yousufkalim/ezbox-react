@@ -12,21 +12,24 @@ import Api from "../api/index";
 import assetsURL from "../utils/Assets";
 import FontLoader from "../components/FontLoader";
 
-const Consulting = () => {
+import { useParams } from "react-router-dom";
+
+const Layout3 = () => {
   const [isLoading, setIsLoading] = useState(true);
-  const [consultingData, setconsultingData] = useState({});
+  const [layoutData, setLayoutData] = useState({});
+
+  const { layout_id } = useParams();
 
   useEffect(() => {
-    getConsultingdata();
+    getData();
   }, []);
 
-  const getConsultingdata = async () => {
+  const getData = async () => {
     let response;
     try {
-      response = await Api("get", `/layout3/`);
-      const _consultingData = response.data.data[0];
-
-      setconsultingData(_consultingData);
+      response = await Api("get", `/layout/${layout_id}`);
+      const _data = response.data.data;
+      setLayoutData(_data);
       setIsLoading(false);
     } catch (e) {
       console.trace(e);
@@ -41,15 +44,15 @@ const Consulting = () => {
         ) : (
           <>
             <FontLoader
-              fonts={[consultingData.text_font, consultingData.textbottom_font]}
+              fonts={[layoutData.text_font, layoutData.textbottom_font]}
             />
             <Grid container spacing={1} sx={{ paddingBottom: "10%" }}>
               <Grid xs={12} sm={12} md={6}>
                 <div className="Consultingimgdiv">
                   <img
                     src={
-                      consultingData
-                        ? assetsURL(consultingData.image)
+                      layoutData
+                        ? assetsURL(layoutData.image)
                         : Centerimg
                     }
                     className="consultingimg"
@@ -65,23 +68,23 @@ const Consulting = () => {
                 <Typography
                   className="Consultingtypo"
                   style={{
-                    fontFamily: consultingData.text_font,
+                    fontFamily: layoutData.text_font,
                   }}
                 >
-                  {consultingData.text}
+                  {layoutData.text}
                 </Typography>
                 <div className="buttondiv">
                   <div className="bb">
                     <Typography
                       className="buttontypo"
                       style={{
-                        fontFamily: consultingData.textbottom_font,
+                        fontFamily: layoutData.textbottom_font,
                       }}
                     >
-                      {consultingData.textbottom}
+                      {layoutData.textbottom}
                     </Typography>
                     <Link to="/Contact">
-                      {consultingData.contactbutton && (
+                      {layoutData.contactbutton && (
                         <Button
                           variant="contained"
                           className="Contactusbutton"
@@ -105,4 +108,4 @@ const Consulting = () => {
   );
 };
 
-export default Consulting;
+export default Layout3;

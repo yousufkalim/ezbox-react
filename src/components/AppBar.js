@@ -10,9 +10,11 @@ import assetsURL from "../utils/Assets";
 const AppBar = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [navData, setnavData] = useState({});
+  const [appRoutes, setAppRoutes] = useState([]);
 
   useEffect(() => {
     getNav();
+    getPages();
   }, []);
 
   const getNav = async () => {
@@ -23,6 +25,18 @@ const AppBar = () => {
 
       setnavData(_navData);
       // setIsLoading(false);
+    } catch (e) {
+      console.trace(e);
+    }
+  };
+
+  // func to get patient assigned therapists
+  const getPages = async () => {
+    let response;
+    try {
+      response = await Api("get", `/pages/`);
+      const data = response.data.data;
+      setAppRoutes(data);
     } catch (e) {
       console.trace(e);
     }
@@ -52,42 +66,22 @@ const AppBar = () => {
             </Link>
           </div>
           <ul id="menu">
-            <li>
-              <Link
-                to="/Advertising"
-                className={`${
-                  location.pathname === "/Advertising"
-                    ? "background"
-                    : ""
-                }`}
-              >
-                Advertising
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/ProductDevelopment"
-                className={`${
-                  location.pathname === "/ProductDevelopment"
-                    ? "background"
-                    : ""
-                }`}
-              >
-                Product Development
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/Consulting"
-                className={`${
-                  location.pathname === "/Consulting"
-                    ? "background"
-                    : ""
-                }`}
-              >
-                Consulting
-              </Link>
-            </li>
+            {
+              appRoutes.map(
+                v => <li>
+                  <Link
+                    to={`${v.path}/${v.layout}`}
+                    className={`${
+                      location.pathname === v.name
+                        ? "background"
+                        : ""
+                    }`}
+                  >
+                    {v.name}
+                  </Link>
+                </li>
+              )
+            }
             <li>
               <Link
                 to="/ProductLine"
