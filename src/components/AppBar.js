@@ -70,7 +70,7 @@ const AppBar = () => {
               appRoutes.map(
                 v => <li>
                   <Link
-                    to={`${v.path}/${v.layout}`}
+                    to={`${v.path}/${v.layout._id}`}
                     className={`${
                       location.pathname === v.name
                         ? "background"
