@@ -3,32 +3,32 @@ import EzbozLogo from "../assets/images/Ezlogo.svg";
 import Menu from "@mui/material/Menu";
 import MenuIcon from "@mui/icons-material/Menu";
 import IconButton from "@mui/material/IconButton";
-import { Link, useHistory } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import Api from "../api/index";
 import assetsURL from "../utils/Assets";
 
 const AppBar = () => {
   const [isLoading, setIsLoading] = useState(true);
-  const [navData, setnavData] = useState({});
+  const [appRoutes, setAppRoutes] = useState([]);
 
   useEffect(() => {
-    getNav();
+    getPages();
   }, []);
 
-  const getNav = async () => {
+  // func to get patient assigned therapists
+  const getPages = async () => {
     let response;
     try {
-      response = await Api("get", `/navigation`);
-      const _navData = response.data.navigation;
-
-      setnavData(_navData);
-      // setIsLoading(false);
+      response = await Api("get", `/pages/`);
+      const data = response.data.data;
+      setAppRoutes(data);
     } catch (e) {
       console.trace(e);
     }
   };
 
-  const history = useHistory();
+  const navigate = useNavigate();
+  const location = useLocation();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
@@ -46,80 +46,37 @@ const AppBar = () => {
             <Link to="/" activeClassName="active">
               <img
                 className="logo"
-                src={navData.logo ? assetsURL(navData.logo) : EzbozLogo}
+                src={EzbozLogo}
                 alt=""
               />
             </Link>
           </div>
           <ul id="menu">
-            <li>
-              <Link
-                to="/Advertising"
-                className={`${
-                  history.location.pathname === "/Advertising"
-                    ? "background"
-                    : ""
-                }`}
-              >
-                Advertising
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/ProductDevelopment"
-                className={`${
-                  history.location.pathname === "/ProductDevelopment"
-                    ? "background"
-                    : ""
-                }`}
-              >
-                Product Development
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/Consulting"
-                className={`${
-                  history.location.pathname === "/Consulting"
-                    ? "background"
-                    : ""
-                }`}
-              >
-                Consulting
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/ProductLine"
-                className={`${
-                  history.location.pathname === "/ProductLine"
-                    ? "background"
-                    : ""
-                }`}
-              >
-                Product line
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/Contact"
-                className={`${
-                  history.location.pathname === "/Contact" ? "background" : ""
-                }`}
-              >
-                Contact
-              </Link>
-            </li>
-            <li>
-              <a href={navData.blog} target="_blank">
-                Blog
-              </a>
-            </li>
-            <li>
-              <a href={navData.forum} target="_blank">
-                Forum
-              </a>
-            </li>
+            {
+              appRoutes.map(
+                v =>
+                v.rel == "external"
+                ?
+                <li>
+                  <a href={v.path} target="_blank">
+                    {v.name}
+                  </a>
+                </li>
+                :
+                <li>
+                  <Link
+                    to={`/${v.path}`}
+                    className={`${
+                      location.pathname === `/${v.path}`
+                        ? "background"
+                        : ""
+                    }`}
+                  >
+                    {v.name}
+                  </Link>
+                </li>
+              )
+            }
           </ul>
         </div>
         <div className="hamburgermenu">

@@ -9,27 +9,29 @@ import Rightimg from "../assets/Advertisingimages/rightimg.jpg";
 
 import FontLoader from "../components/FontLoader";
 import Button from "@mui/material/Button";
-import { Link } from "react-router-dom";
-import { Advertisings } from "../Data/Advertising";
+import { Link, useLocation } from "react-router-dom";
 import Api from "../api/index";
 import assetsURL from "../utils/Assets";
 
-// import AdvestingSvg from "../assets/images/AdvestisingSvg.svg";
-export const Advertising = () => {
+export default function Layout1 (){
   const [isLoading, setIsLoading] = useState(true);
-  const [advertisingData, setadvertisingData] = useState(null);
+  const [layoutData, setLayoutData] = useState(null);
+
+  const location = useLocation();
 
   useEffect(() => {
-    getAdvertising();
+    getData();
   }, []);
 
-  const getAdvertising = async () => {
+  const getData = async () => {
     let response;
     try {
-      response = await Api("get", `/advertising/`);
-      const _advertisingData = response.data.advertise;
-
-      setadvertisingData(_advertisingData);
+      const body = {
+        path: location.pathname.replace("/", "")
+      }
+      response = await Api("post", `/pages/get_one`, body);
+      const _data = response.data.data.layout;
+      setLayoutData(_data);
       setIsLoading(false);
     } catch (e) {
       console.trace(e);
@@ -46,9 +48,9 @@ export const Advertising = () => {
           <>
             <FontLoader
               fonts={[
-                advertisingData.title_font,
-                advertisingData.text_font,
-                advertisingData.textbottom_font,
+                layoutData.title_font,
+                layoutData.text_font,
+                layoutData.textbottom_font,
               ]}
             />
 
@@ -57,20 +59,20 @@ export const Advertising = () => {
                 <Typography
                   className="Advertising_heading"
                   style={{
-                    fontFamily: advertisingData.title_font,
+                    fontFamily: layoutData.title_font,
                   }}
                 >
-                  {advertisingData.title}
+                  {layoutData.title}
                 </Typography>
               </Grid>
               <Grid xs={12} sm={12} md={7} className="upper_right_div">
                 <Typography
                   className="Advertising_para"
                   style={{
-                    fontFamily: advertisingData.text_font,
+                    fontFamily: layoutData.text_font,
                   }}
                 >
-                  {advertisingData.text}
+                  {layoutData.text}
                 </Typography>
               </Grid>
             </Grid>
@@ -79,8 +81,8 @@ export const Advertising = () => {
               <Grid item xs={12} sm={12} md={4} className="advertisingdiv">
                 <img
                   src={
-                    advertisingData
-                      ? assetsURL(advertisingData.leftImg)
+                    layoutData
+                      ? assetsURL(layoutData.leftImg)
                       : Centerimg
                   }
                   className="advertisingimg"
@@ -101,8 +103,8 @@ export const Advertising = () => {
               >
                 <img
                   src={
-                    advertisingData
-                      ? assetsURL(advertisingData.centerImg)
+                    layoutData
+                      ? assetsURL(layoutData.centerImg)
                       : Leftimg
                   }
                   className="advertisingimg"
@@ -116,8 +118,8 @@ export const Advertising = () => {
               <Grid item xs={12} sm={12} md={4} className="advertisingdiv">
                 <img
                   src={
-                    advertisingData
-                      ? assetsURL(advertisingData.rightImg)
+                    layoutData
+                      ? assetsURL(layoutData.rightImg)
                       : Rightimg
                   }
                   className="advertisingimg"
@@ -136,10 +138,10 @@ export const Advertising = () => {
                 <Typography
                   className="Advertising-heading"
                   style={{
-                    fontFamily: advertisingData.textbottom_font,
+                    fontFamily: layoutData.textbottom_font,
                   }}
                 >
-                  {advertisingData.textbottom}
+                  {layoutData.textbottom}
                 </Typography>
                 <div
                   style={{
@@ -149,7 +151,7 @@ export const Advertising = () => {
                   className="advertisingbtn"
                 >
                   <Link to="/Contact" activeClassName="active">
-                    {advertisingData.contactbutton && (
+                    {layoutData.contactbutton && (
                       <Button
                         variant="contained"
                         className="Contactusbutton"
