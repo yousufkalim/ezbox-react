@@ -10,13 +10,13 @@ import Api from "../api/index";
 import assetsURL from "../utils/Assets";
 import FontLoader from "../components/FontLoader";
 
-import { useParams } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 const Layout2 = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [layoutData, setLayoutData] = useState({});
 
-  const { layout_id } = useParams();
+  const location = useLocation();
 
   useEffect(() => {
     getData();
@@ -25,8 +25,11 @@ const Layout2 = () => {
   const getData = async () => {
     let response;
     try {
-      response = await Api("get", `/layout/${layout_id}`);
-      const _data = response.data.data;
+      const body = {
+        path: location.pathname.replace("/", "")
+      }
+      response = await Api("post", `/pages/get_one`, body);
+      const _data = response.data.data.layout;
       setLayoutData(_data);
       setIsLoading(false);
     } catch (e) {

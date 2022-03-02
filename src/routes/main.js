@@ -36,7 +36,7 @@ const Main = () => {
   const parsePagesData = (data) => {
     const arr = [];
 
-    // Static routes
+    // Home routes
     arr.push({
       path: "*",
       name: "Home",
@@ -50,25 +50,16 @@ const Main = () => {
 
     for( let i = 0; i < data.length; i++ ){
       const currentObj = data[i];
+      if(currentObj.rel == "external"){
+        continue;
+      }
       const obj = {
-        path: `${currentObj.path}/:layout_id`,
+        path: `${currentObj.path}`,
         name: currentObj.name,
         element: resolvePageToJSX(currentObj)
       }
       arr.push(obj);
     }
-
-    // Static routes
-    arr.push({
-      path: "ProductLine",
-      name: "ProductLine",
-      element: ProductLine
-    });
-    arr.push({
-      path: "Contact",
-      name: "Contact",
-      element: Contact
-    });
 
     setAppRoutes(arr);
   }
@@ -80,6 +71,10 @@ const Main = () => {
       return Layout2;
     } else if(obj.layout_type == "type3"){
       return Layout3;
+    } else if(obj.path == "product_line"){
+      return ProductLine;
+    } else if(obj.path == "contact"){
+      return Contact;
     } else {
       return null;
     }

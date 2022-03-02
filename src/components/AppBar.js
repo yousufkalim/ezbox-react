@@ -3,32 +3,17 @@ import EzbozLogo from "../assets/images/Ezlogo.svg";
 import Menu from "@mui/material/Menu";
 import MenuIcon from "@mui/icons-material/Menu";
 import IconButton from "@mui/material/IconButton";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import Api from "../api/index";
 import assetsURL from "../utils/Assets";
 
 const AppBar = () => {
   const [isLoading, setIsLoading] = useState(true);
-  const [navData, setnavData] = useState({});
   const [appRoutes, setAppRoutes] = useState([]);
 
   useEffect(() => {
-    getNav();
     getPages();
   }, []);
-
-  const getNav = async () => {
-    let response;
-    try {
-      response = await Api("get", `/navigation`);
-      const _navData = response.data.navigation;
-
-      setnavData(_navData);
-      // setIsLoading(false);
-    } catch (e) {
-      console.trace(e);
-    }
-  };
 
   // func to get patient assigned therapists
   const getPages = async () => {
@@ -42,6 +27,7 @@ const AppBar = () => {
     }
   };
 
+  const navigate = useNavigate();
   const location = useLocation();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
@@ -60,7 +46,7 @@ const AppBar = () => {
             <Link to="/" activeClassName="active">
               <img
                 className="logo"
-                src={navData.logo ? assetsURL(navData.logo) : EzbozLogo}
+                src={EzbozLogo}
                 alt=""
               />
             </Link>
@@ -68,11 +54,20 @@ const AppBar = () => {
           <ul id="menu">
             {
               appRoutes.map(
-                v => <li>
+                v =>
+                v.rel == "external"
+                ?
+                <li>
+                  <a href={v.url} target="_blank">
+                    {v.name}
+                  </a>
+                </li>
+                :
+                <li>
                   <Link
-                    to={`${v.path}/${v.layout._id}`}
+                    to={`/${v.path}`}
                     className={`${
-                      location.pathname === v.name
+                      location.pathname === `/${v.path}`
                         ? "background"
                         : ""
                     }`}
@@ -82,38 +77,6 @@ const AppBar = () => {
                 </li>
               )
             }
-            <li>
-              <Link
-                to="/ProductLine"
-                className={`${
-                  location.pathname === "/ProductLine"
-                    ? "background"
-                    : ""
-                }`}
-              >
-                Product line
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/Contact"
-                className={`${
-                  location.pathname === "/Contact" ? "background" : ""
-                }`}
-              >
-                Contact
-              </Link>
-            </li>
-            <li>
-              <a href={navData.blog} target="_blank">
-                Blog
-              </a>
-            </li>
-            <li>
-              <a href={navData.forum} target="_blank">
-                Forum
-              </a>
-            </li>
           </ul>
         </div>
         <div className="hamburgermenu">
