@@ -58,7 +58,7 @@ const AppBar = () => {
                 v.rel == "external"
                 ?
                 <li>
-                  <a href={v.url} target="_blank">
+                  <a href={v.path} target="_blank">
                     {v.name}
                   </a>
                 </li>
