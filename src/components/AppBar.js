@@ -21,7 +21,7 @@ const AppBar = () => {
     try {
       response = await Api("get", `/pages/`);
       let data = response.data.data;
-      data = data.sort( (a,b) => b.rank - a.rank );
+      data = data.sort( (a,b) => a.rank - b.rank );
       setAppRoutes(data);
     } catch (e) {
       console.trace(e);
