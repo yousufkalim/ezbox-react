@@ -25,7 +25,7 @@ const Main = () => {
   const getPages = async () => {
     let response;
     try {
-      response = await Api("post", `/pages/`);
+      response = await Api("post", `/pages/get_all`);
       const data = response.data.data;
       parsePagesData(data);
     } catch (e) {
