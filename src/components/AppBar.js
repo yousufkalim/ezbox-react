@@ -19,7 +19,7 @@ const AppBar = () => {
   const getPages = async () => {
     let response;
     try {
-      response = await Api("get", `/pages/`);
+      response = await Api("post", `/pages/`);
       let data = response.data.data;
       data = data.sort( (a,b) => a.rank - b.rank );
       setAppRoutes(data);
