@@ -5,10 +5,8 @@ import MenuIcon from "@mui/icons-material/Menu";
 import IconButton from "@mui/material/IconButton";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import Api from "../api/index";
-import assetsURL from "../utils/Assets";
 
 const AppBar = () => {
-  const [isLoading, setIsLoading] = useState(true);
   const [appRoutes, setAppRoutes] = useState([]);
 
   useEffect(() => {

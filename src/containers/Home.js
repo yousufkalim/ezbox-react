@@ -36,7 +36,9 @@ export default function Home() {
     try {
       response = await Api("get", `/homeScreen`);
       const _homeData = response.data.home;
-
+      if(_homeData.background_image && _homeData.is_background_image_active){
+        document.body.style.backgroundImage = `url(${assetsURL(_homeData.background_image)})`;
+      }
       sethomeData(_homeData);
       setIsLoading(false);
     } catch (e) {
