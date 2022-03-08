@@ -5,18 +5,15 @@ import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 import AppBar from "../components/AppBar";
 import Frame from "../assets/images/Frame.svg";
-import Homeimg from "../assets/Homeimges/heroimg.png";
 import DownArrow from "../assets/images/Down_Arrow.svg";
 import Player from "../assets/images/Player.svg";
 import Ezboximg from "../assets/images/Exboximg.svg";
 import QuestionMark from "../assets/images/Questionmark.svg";
 import Ez from "../assets/images/EZ.svg";
 import Footer from "../components/Footer";
-// import GetData from "../utils/Data";
 import CustomerReview from "../components/CustomerReviews";
 import Left from "../assets/images/Left.svg";
 import Right from "../assets/images/Right.svg";
-import { HomeScreen } from "../Data/Home";
 import Api from "../api/index";
 import FontLoader from "../components/FontLoader";
 
