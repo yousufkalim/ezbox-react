@@ -2,7 +2,7 @@
   display: flex !important;
   justify-content: center !important;
   font-weight: 600 !important;
-  font-size: 96px !important;
+  font-size: 50px !important;
   color: #454238 !important;
 
   line-height: 115px !important;
@@ -21,7 +21,7 @@
   align-items: center !important;
   font-style: normal !important;
   font-weight: 600 !important;
-  font-size: 36px !important;
+  font-size: 24px !important;
   color: #454238 !important;
 
   line-height: 43px !important;
@@ -29,6 +29,7 @@
   padding-top: 20% !important;
   padding-right: 19% !important;
   word-break: break-all !important;
+  padding-left: 17% !important;
 }
 .upper_right_div {
   display: flex !important;
@@ -95,12 +96,13 @@
   /* justify-content: center !important; */
   align-items: center !important;
   padding-bottom: 35% !important;
-  padding-left: 9% !important;
+  /* padding-left: 9% !important; */
 }
 .advertisingimg {
   overflow: hidden !important;
   width: 98% !important;
 }
+
 @media only screen and (max-width: 1700px) {
   .advertisingimg {
     width: 98% !important;

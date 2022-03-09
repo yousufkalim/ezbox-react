@@ -13,7 +13,7 @@ import { Link, useLocation } from "react-router-dom";
 import Api from "../api/index";
 import assetsURL from "../utils/Assets";
 
-export default function Layout1 (){
+export default function Layout1() {
   const [isLoading, setIsLoading] = useState(true);
   const [layoutData, setLayoutData] = useState(null);
 
@@ -27,8 +27,8 @@ export default function Layout1 (){
     let response;
     try {
       const body = {
-        path: location.pathname.replace("/", "")
-      }
+        path: location.pathname.replace("/", ""),
+      };
       response = await Api("post", `/pages/get_one`, body);
       const _data = response.data.data.layout;
       setLayoutData(_data);
@@ -80,11 +80,7 @@ export default function Layout1 (){
             <Grid container spacing={1}>
               <Grid item xs={12} sm={12} md={4} className="advertisingdiv">
                 <img
-                  src={
-                    layoutData
-                      ? assetsURL(layoutData.leftImg)
-                      : Centerimg
-                  }
+                  src={layoutData ? assetsURL(layoutData.leftImg) : Centerimg}
                   className="advertisingimg"
                   style={{
                     width: "98%",
@@ -102,11 +98,7 @@ export default function Layout1 (){
                 className="advertisingdiv"
               >
                 <img
-                  src={
-                    layoutData
-                      ? assetsURL(layoutData.centerImg)
-                      : Leftimg
-                  }
+                  src={layoutData ? assetsURL(layoutData.centerImg) : Leftimg}
                   className="advertisingimg"
                   style={{
                     width: "98%",
@@ -117,11 +109,7 @@ export default function Layout1 (){
               </Grid>
               <Grid item xs={12} sm={12} md={4} className="advertisingdiv">
                 <img
-                  src={
-                    layoutData
-                      ? assetsURL(layoutData.rightImg)
-                      : Rightimg
-                  }
+                  src={layoutData ? assetsURL(layoutData.rightImg) : Rightimg}
                   className="advertisingimg"
                   style={{
                     width: "98%",
@@ -146,7 +134,7 @@ export default function Layout1 (){
                 <div
                   style={{
                     paddingTop: "6%",
-                    paddingRight: "68%",
+                    paddingRight: "28%",
                   }}
                   className="advertisingbtn"
                 >
@@ -173,4 +161,4 @@ export default function Layout1 (){
       </>
     </>
   );
-};
+}

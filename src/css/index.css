@@ -16,9 +16,14 @@
 }
 body {
   background-color: #fcfcfc;
+  /* background: url("../assets/images/bgm.jpg"); */
+  background-size: cover;
+  background-position: cover;
   background-attachment: fixed;
-	background-repeat: no-repeat;
+  background-repeat: no-repeat;
+  height: auto;
 }
+
 a {
   text-decoration: none !important;
 }
