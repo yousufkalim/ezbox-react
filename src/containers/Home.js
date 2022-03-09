@@ -16,6 +16,7 @@ import Left from "../assets/images/Left.svg";
 import Right from "../assets/images/Right.svg";
 import Api from "../api/index";
 import FontLoader from "../components/FontLoader";
+import { Link } from "react-router-dom";
 
 import assetsURL from "../utils/Assets";
 
@@ -28,13 +29,19 @@ export default function Home() {
     geHomedata();
   }, []);
 
+  const openInNewTab = (url) => {
+    const newWindow = window.open(url, "_blank", "noopener,noreferrer");
+    if (newWindow) newWindow.opener = null;
+  };
   const geHomedata = async () => {
     let response;
     try {
       response = await Api("get", `/homeScreen`);
       const _homeData = response.data.home;
-      if(_homeData.background_image && _homeData.is_background_image_active){
-        document.body.style.backgroundImage = `url(${assetsURL(_homeData.background_image)})`;
+      if (_homeData.background_image && _homeData.is_background_image_active) {
+        document.body.style.backgroundImage = `url(${assetsURL(
+          _homeData.background_image
+        )})`;
       }
       sethomeData(_homeData);
       setIsLoading(false);
@@ -44,7 +51,8 @@ export default function Home() {
   };
 
   const myRef = useRef(null);
-  const executeScroll = () => myRef.current.scrollIntoView();
+  const executeScroll = () =>
+    myRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
   return (
     <>
       <AppBar></AppBar>
@@ -111,7 +119,12 @@ export default function Home() {
               >
                 <img
                   src={Player}
-                  style={{ width: "80%", objectFit: "cover" }}
+                  style={{
+                    width: "80%",
+                    objectFit: "cover",
+                    cursor: "pointer",
+                  }}
+                  onClick={() => openInNewTab(homeData.yt_link)}
                 ></img>
               </Grid>
               <Grid
