@@ -2,6 +2,7 @@
   display: flex !important;
   justify-content: center !important;
   align-items: center !important;
+  background: #fcfcfc !important;
 }
 
 .Footer_typo {
@@ -17,6 +18,7 @@
   font-size: 18px !important;
   line-height: 22px !important;
   margin-right: 1% !important;
+  color: #454238 !important;
 }
 .footer_ezbox {
   font-weight: 600 !important;

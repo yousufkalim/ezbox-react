@@ -16,9 +16,20 @@
 }
 body {
   background-color: #fcfcfc;
+  background: linear-gradient(rgb(231, 231, 231), rgba(243, 241, 241, 0.1));
+  background-size: cover;
+  background-position: cover;
   background-attachment: fixed;
-	background-repeat: no-repeat;
+  background-repeat: no-repeat;
+  /* background: url("../assets/images/bgm.jpg"); */
+  /* background-color: rgba(248, 247, 216, 0.7); */
+
+  height: auto;
+  /* opacity: 80%; */
 }
+
 a {
   text-decoration: none !important;
+}
+.backimg {
 }
