@@ -4,6 +4,7 @@
   box-shadow: 0px 7px 20px rgba(124, 167, 250, 0.4);
   border-radius: 20px !important;
   width: 300px !important;
+  height: 300px !important;
   padding: 5% 15% 15% 15% !important;
   display: flex !important;
   flex-direction: column !important;
@@ -41,7 +42,8 @@
   display: flex !important;
   align-items: center !important;
   text-align: center !important;
-  padding-top: 10% !important;
+  padding-top: 20% !important;
+  height: 70px !important;
 }
 .carouselimg {
   display: flex !important;
