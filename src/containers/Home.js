@@ -114,18 +114,21 @@ export default function Home() {
                 xs={12}
                 sm={12}
                 md={6}
-                sx={{ display: "flex", justifyContent: "center" }}
+                sx={{
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
                 className="ytplayer"
               >
-                <img
-                  src={Player}
+                <iframe
+                  src={homeData.yt_link}
                   style={{
                     width: "80%",
-                    objectFit: "cover",
-                    cursor: "pointer",
+                    height: "80%",
                   }}
-                  onClick={() => openInNewTab(homeData.yt_link)}
-                ></img>
+                  frameborder="0"
+                ></iframe>
               </Grid>
               <Grid
                 // xs={12}
