@@ -50,9 +50,9 @@
   align-items: flex-start !important;
   justify-content: flex-end !important;
 }
-.Customerreviewcaruseldiv1 {
+/* .Customerreviewcaruseldiv1 {
   padding-left: 3% !important;
-}
+} */
 
 @media only screen and (max-width: 1550px) {
   .clientreview {
