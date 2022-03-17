@@ -39,17 +39,15 @@
   padding-bottom: 12% !important;
 }
 .Advertising-heading {
-  font-weight: 600 !important;
-  font-size: 80px !important;
-  color: #454238 !important;
-
-  line-height: 115px !important;
-  text-transform: uppercase !important;
   border-left: 10px solid #3399fe !important;
   border-radius: 4px !important;
+  color: #454238 !important;
+  font-size: 58px !important;
+  font-weight: 600 !important;
+  line-height: 115px !important;
   padding-left: 4% !important;
-  /* padding-left: 17% !important; */
-  width: 45% !important;
+  margin-left: 18% !important;
+  text-transform: uppercase !important;
 }
 .emptdiv {
   width: 2px !important;
