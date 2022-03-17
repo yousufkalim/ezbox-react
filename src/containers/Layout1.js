@@ -134,7 +134,7 @@ export default function Layout1() {
                 <div
                   style={{
                     paddingTop: "6%",
-                    paddingRight: "28%",
+                    paddingRight: "36%",
                   }}
                   className="advertisingbtn"
                 >
