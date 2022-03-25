@@ -1,12 +1,37 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 import Ezboximg from "../assets/images/Exboximg.svg";
 import Followus from "../assets/images/Followus.svg";
 import Socialimg from "../assets/images/Footersocialimg.svg";
 import { Link } from "react-router-dom";
+import Api from "../api/index";
 
 const Footer = () => {
+
+  const [appRoutes, setAppRoutes] = useState([]);
+
+  useEffect(() => {
+    getPages();
+  }, []);
+
+  // func to get patient assigned therapists
+  const getPages = async () => {
+    let response;
+    try {
+      response = await Api("post", `/pages/get_all`);
+      let data = response.data.data;
+      data = data.sort( (a,b) => a.rank - b.rank );
+      setAppRoutes(data);
+    } catch (e) {
+      console.trace(e);
+    }
+  };
+
+  const navToExternal = (link) => {
+    window.open(link, "_blank");
+  }
+
   return (
     <>
       <Grid container spacing={1} className="footer_grid1">
@@ -50,21 +75,26 @@ const Footer = () => {
           </div>
         </Grid>
         <Grid item xs={12} sm={12} md={3.4} className="footer_div">
-          <Link to="/Advertising">
-            <Typography className="footer_list">Advertising</Typography>
-          </Link>
-          <Link to="/ProductDevelopment">
-            <Typography className="footer_list">Product Development</Typography>
-          </Link>
-          <Link to="/Consulting">
-            <Typography className="footer_list">Consulting</Typography>
-          </Link>
-          <Link to="/ProductLine">
-            <Typography className="footer_list">Product Line</Typography>
-          </Link>
-          <Link to="/Contact">
-            <Typography className="footer_list">Contact</Typography>
-          </Link>
+          {
+            appRoutes.map(
+              v =>
+              v.rel == "external"
+              ?
+              <Typography
+                className="footer_list"
+                style={{
+                  "cursor": "pointer"
+                }}
+                onClick={() => navToExternal(v.path)}
+              >
+                {v.name}
+              </Typography>
+              :
+              <Link to={`/${v.path}`}>
+                <Typography className="footer_list">{v.name}</Typography>
+              </Link>
+            )
+          }
         </Grid>
         <Grid item xs={12} sm={12} md={4}>
           <div
